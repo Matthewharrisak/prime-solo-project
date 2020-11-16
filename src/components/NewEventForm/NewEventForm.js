@@ -19,17 +19,24 @@ class NewEventForm extends Component {
 
     handleChange= (keyname, event) => {
         event.preventDefault();
+        // console.log('this is our new state' , this.state);
+        
         this.setState({
-          newMovie:{
+          newEvent:{
             ...this.state.newEvent,
             [keyname]: event.target.value,
         }});
-      }
+     }
+
+     addEvent = () => {
+         console.log('this is our state' , this.state);
+         
+     }
 
   render() {
     return (
       <div>
-          <form>
+          <form onSubmit={this.addEvent}>
               <h1> this is where we'll add the display events form </h1>
 
               <input  onChange={(event) => this.handleChange( 'title' , event)} 
@@ -49,7 +56,7 @@ class NewEventForm extends Component {
 
                 <input  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
                                     type="text" id="" placeholder='bandcamp link'/>
-
+<button> submit</button>
           </form>
       </div>
     );
