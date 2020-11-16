@@ -12,13 +12,19 @@ class NewEventForm extends Component {
     // fires off funtions on pageload
     componentDidMount = () => {
       this.props.dispatch({ type: 'GOT_EVENTS'});
+      console.log(this.props.store.event.event);
+      
     } 
   render() {
     return (
       <div>
-          <form>
+          
               <h1> this is where we'll add the display events form </h1>
-          </form>
+              {this.props.store.event.event.map((event) =>{
+                return <div> {event.title} </div>
+              })}
+              {JSON.stringify(this.props.store.event)}
+         
       </div>
     );
   }
