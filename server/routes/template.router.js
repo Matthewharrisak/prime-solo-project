@@ -7,6 +7,14 @@ const router = express.Router();
  */
 router.get('/', (req, res) => {
   // GET route code here
+  const queryText = `SELECT * FROM events;`;
+  pool.query(queryText)
+  .then((result) => {
+      res.send(result.rows);
+  }).catch((error) =>{
+    console.log(`Error with Query` , error);
+    res.sendStatus(500);
+  });
 });
 
 /**
