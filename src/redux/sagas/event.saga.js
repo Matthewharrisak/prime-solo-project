@@ -15,3 +15,5 @@ function* fetchEvent() {
         console.log('error from fetch event saga' ,error);
      }
 }
+
+export default eventSaga;
