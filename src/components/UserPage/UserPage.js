@@ -11,6 +11,8 @@ class UserPage extends Component {
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
         <p>Your ID is: {this.props.store.user.id}</p>
         <LogOutButton className="log-in" />
+        <button> this button will route you to the add new event form</button>
+        <h1> this is where we'll display user specific events </h1>
       </div>
     );
   }

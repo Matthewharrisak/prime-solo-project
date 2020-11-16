@@ -6,7 +6,7 @@
 
  CREATE TABLE "user" (
 	"id" serial NOT NULL,
-	"user_name" varchar(255) NOT NULL,
+	"username" varchar(255) NOT NULL,
 	"password" varchar(255) NOT NULL,
 	"admin" BOOLEAN NOT NULL,
 	CONSTRAINT "user_pk" PRIMARY KEY ("id")

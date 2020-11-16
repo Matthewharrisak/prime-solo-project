@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class ViewEvents extends Component {
   // this component displays all events from the database. 
@@ -15,4 +16,4 @@ class ViewEvents extends Component {
 }
 
 // this allows us to use <App /> in index.js
-export default connect()(ViewEvents);
+export default connect(mapStoreToProps)(ViewEvents);
