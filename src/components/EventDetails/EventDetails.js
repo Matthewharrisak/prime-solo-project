@@ -4,8 +4,15 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import Iframe from 'react-iframe'
 
+
+
 class NewEventForm extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
+
+    // fires off funtions on pageload
+    componentDidMount = () => {
+      this.props.dispatch({ type: 'GOT_EVENTS'});
+    } 
   render() {
     return (
       <div>
