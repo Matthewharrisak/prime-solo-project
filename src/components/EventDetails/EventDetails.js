@@ -21,7 +21,7 @@ class NewEventForm extends Component {
           
               <h1> this is where we'll add the display events form </h1>
               {this.props.store.event.event.map((event) =>{
-                return <div> {event.title} </div>
+                return <div key={event.event_id}> {event.title} </div>
               })}
               {JSON.stringify(this.props.store.event)}
          
