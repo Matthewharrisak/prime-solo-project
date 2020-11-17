@@ -11,9 +11,9 @@ class UserPage extends Component {
     this.props.dispatch({ type: 'GOT_EVENTS'});
   }
 
-  deleteEvent = (item) => {
-    console.log('whats up, were deleting suttf');
-    this.props.dispatch({type: 'DELETE_ITEM', payload: item});
+  deleteEvent = (event) => {
+    console.log('whats up, were deleting suttf', event.event_id);
+    this.props.dispatch({type: 'DELETE_ITEM', payload: event});
     
   }
 
@@ -27,10 +27,16 @@ class UserPage extends Component {
         <h1> this is where we'll display user specific events </h1>
 
 
-        {this.props.store.event.event.map((event) =>{
-                return <div key={event.event_id}> {event.title} {event.address}
-                {event.description} {event.date} {event.image_url} 
-                <button onClick={(event) => this.deleteEvent(event.id)}>Delete</button>    
+        {this.props.store.event.event.map((funEvent) =>{
+                return <div key={funEvent.event_id}> {funEvent.title} {funEvent.address}
+                {funEvent.description} {funEvent.date} {funEvent.image_url} 
+
+
+                <button onClick={(event) => this.deleteEvent(funEvent.event_id)}>Delete</button>    
+
+
+
+
                  <button> update</button>
 
 

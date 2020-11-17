@@ -27,9 +27,9 @@ function* setEvent(action) {
 }
 
 function* deleteItem(action) {
-    // yield console.log('DELETED ITEM:', action.payload)
+    yield console.log('DELETED ITEM:', action)
     try {
-      yield axios.delete(`/api/shelf/${action.payload}`);
+      yield axios.delete(`/api/events/${action.payload}`);
     } catch (error) {
       console.log('ERROR in axios delete', error);
     }
