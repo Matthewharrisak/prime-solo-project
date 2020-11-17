@@ -22,6 +22,16 @@ router.get('/', (req, res) => {
  */
 router.post('/', (req, res) => {
   // POST route code here
+  console.log('logging from the POST request' , req.body);
+  const queryText = `INSERT INTO "events" ("title, "address", "description", "date",  "image_url" , "bandcamp")
+  VALUES `;
+  pool.query(queryText)
+  .then((result) => {
+    res.sendStatus(200);
+  }).catch((error) => {
+    console.log(' Error in the POST', error);
+    res.sendStatus(500);
+  });
 });
 
 module.exports = router;

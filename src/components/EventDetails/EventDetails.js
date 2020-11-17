@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import Iframe from 'react-iframe'
+// import Iframe from 'react-iframe'
 
 
 
@@ -24,16 +24,18 @@ class NewEventForm extends Component {
                 return <div key={event.event_id}> {event.title} {event.address}
                 {event.description} {event.date} {event.image_url} 
 
+
+                {/* <Iframe style="border: 0; width: 100%; height: 120px;"
+               src="https://bandcamp.com/EmbeddedPlayer/album=3651962689/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" 
+              seamless><a href="https://ggrraavvee.bandcamp.com/album/goodbye-nowhere">
+              Growing Down by 
+            Termination Dust</a></Iframe> */}
+
                 </div>
               })}
               {/* {JSON.stringify(this.props.store.event)} */}
          
 
-
-              <Iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3651962689/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" 
-              seamless><a href="https://terminationdust.bandcamp.com/album/growing-down">
-                Growing Down by 
-              Termination Dust</a></Iframe>
 
 
 
