@@ -6,9 +6,17 @@ import NewEventForm from '../NewEventForm/NewEventForm';
 
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
+
   componentDidMount = () => {
     this.props.dispatch({ type: 'GOT_EVENTS'});
   }
+
+  deleteEvent = (item) => {
+    console.log('whats up, were deleting suttf');
+    this.props.dispatch({type: 'DELETE_ITEM', payload: item});
+    
+  }
+
   render() {
     return (
       <div>
@@ -22,7 +30,7 @@ class UserPage extends Component {
         {this.props.store.event.event.map((event) =>{
                 return <div key={event.event_id}> {event.title} {event.address}
                 {event.description} {event.date} {event.image_url} 
-                <button> delete Event </button>
+                <button onClick={(event) => this.deleteEvent(event.id)}>Delete</button>    
                  <button> update</button>
 
 

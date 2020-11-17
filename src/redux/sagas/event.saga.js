@@ -5,6 +5,7 @@ import axios from 'axios';
 function* eventSaga(){
     yield takeLatest('GOT_EVENTS' , fetchEvent)
     yield takeEvery('NEW_EVENT' , setEvent)
+    yield takeEvery('DELETE_ITEM' , deleteItem)
 }
 
 
@@ -24,5 +25,14 @@ function* setEvent(action) {
         console.log('error in the post' , error);
     }
 }
+
+function* deleteItem(action) {
+    // yield console.log('DELETED ITEM:', action.payload)
+    try {
+      yield axios.delete(`/api/shelf/${action.payload}`);
+    } catch (error) {
+      console.log('ERROR in axios delete', error);
+    }
+  }
 
 export default eventSaga;
