@@ -4,6 +4,7 @@ import axios from 'axios';
 
 function* eventSaga(){
     yield takeLatest('GOT_EVENTS' , fetchEvent)
+    yield takeEvery('NEW_EVENT' , setEvent)
 }
 
 
@@ -14,6 +15,14 @@ function* fetchEvent() {
     }catch(error) {
         console.log('error from fetch event saga' ,error);
      }
+}
+
+function* setEvent(action) {
+    try{
+        yield axios.post('/api/event', action.payload)
+    } catch (error){
+        console.log('error in the post' , error);
+    }
 }
 
 export default eventSaga;

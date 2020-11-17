@@ -31,8 +31,8 @@ class NewEventForm extends Component {
 
      addEvent = () => {
          console.log('this is our state' , this.state);
-         
-     }
+         this.props.dispatch({ type: 'NEW_EVENT' , payload: this.state});
+    }
 
   render() {
     return (
