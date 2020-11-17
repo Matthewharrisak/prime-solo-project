@@ -23,9 +23,9 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   // POST route code here
   console.log('logging from the POST request' , req.body);
-  const queryText = `INSERT INTO "events" ("title, "address", "description", "date",  "image_url" , "bandcamp")
-  VALUES `;
-  pool.query(queryText)
+  const queryText = `INSERT INTO "events" ("user_id", "title", "address" , "description", "date",  "image_url" , "bandcamp")
+VALUES ($1 , $2, $3, $4 , $5, $6 , $7);`;
+  pool.query(queryText, [req.user.id , req.body.newEvent.title, req.body.newEvent.address, req.body.newEvent.description, req.body.newEvent.date, req.body.newEvent.image_url, req.body.newEvent.bandcamp])
   .then((result) => {
     res.sendStatus(200);
   }).catch((error) => {
@@ -33,5 +33,13 @@ router.post('/', (req, res) => {
     res.sendStatus(500);
   });
 });
+
+// VALUES (${req.user.id}, ${req.body.newEvent.title} , ${req.body.newEvent.address} , ${req.body.newEvent.bandcamp} ,
+//   ${req.body.newEvent.image_url} , ${req.body.newEvent.date} ,  ${req.body.newEvent.description});
+
+
+
+
+
 
 module.exports = router;

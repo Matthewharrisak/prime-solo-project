@@ -19,7 +19,7 @@ function* fetchEvent() {
 
 function* setEvent(action) {
     try{
-        yield axios.post('/api/event', action.payload)
+        yield axios.post('/api/events', action.payload)
     } catch (error){
         console.log('error in the post' , error);
     }
