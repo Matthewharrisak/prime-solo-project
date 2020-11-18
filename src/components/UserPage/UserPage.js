@@ -7,6 +7,18 @@ import NewEventForm from '../NewEventForm/NewEventForm';
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
+
+//   state={
+//     newEvent:{
+//         title: '',
+//         address: '',
+//         description: '',
+//         date: '',
+//         image_url: '',
+//         bandcamp: '',
+//      }
+// }
+
   componentDidMount = () => {
     this.props.dispatch({ type: 'GOT_EVENTS'});
   }
@@ -16,7 +28,6 @@ class UserPage extends Component {
     this.props.dispatch({type: 'DELETE_ITEM', payload: event});
     
   }
-
   updateEvent = (event) => {
     console.log('whats up , were updating stuff!!!' , event.event_id);
     this.props.dispatch({type: 'UPDATE_ITEM', payload: event });
@@ -42,10 +53,12 @@ class UserPage extends Component {
                 <button onClick={(event) => this.updateEvent(funEvent.event_id)}> update</button>
 
 
-  
+               
 
                 </div>
               })}
+              
+            
       </div>
     );
   }

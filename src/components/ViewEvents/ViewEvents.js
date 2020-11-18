@@ -16,12 +16,6 @@ class ViewEvents extends Component {
                 {event.description} {event.date} {event.image_url} 
 
 
-                {/* <Iframe style="border: 0; width: 100%; height: 120px;"
-               src="https://bandcamp.com/EmbeddedPlayer/album=3651962689/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" 
-              seamless><a href="https://ggrraavvee.bandcamp.com/album/goodbye-nowhere">
-              Growing Down by 
-            Termination Dust</a></Iframe> */}
-
                 </div>
               })}
 
