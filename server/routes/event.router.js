@@ -57,7 +57,7 @@ router.put('/:id', (req, res) => {
 
   let queryText = `UPDATE "events" 
   SET "user_id" = 1,
-  "title" = ${req.body.newEvent.title},
+  "title" = 'not cool at all',
   "address" = 'coolest street',
   "description" = 'this is the sickesk gig' ,
   "date" = '1/30/20' ,

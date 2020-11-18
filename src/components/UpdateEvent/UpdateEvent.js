@@ -8,16 +8,7 @@ import UserPage from '../UserPage/UserPage';
 class UpdateEvent extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
-    state={
-        newEvent:{
-            title: '',
-            address: '',
-            description: '',
-            date: '',
-            image_url: '',
-            bandcamp: '',
-         }
-    }
+  
 
     handleChange= (keyname, event) => {
         event.preventDefault();
@@ -30,15 +21,24 @@ class UpdateEvent extends Component {
         }});
      }
 
-     addEvent = () => {
-         console.log('this is our state' , this.state);
-         this.props.dispatch({ type: 'NEW_EVENT' , payload: this.state});
-    }
+   
+
+    updateEvent = (event) => {
+        console.log('whats up , were updating stuff!!!' , event.event_id);
+        this.props.dispatch({type: 'UPDATE_ITEM', payload:  {
+            title: '',
+            address: '',
+            description: '',
+            date: '',
+            image_url: '',
+            bandcamp: '',
+         } });
+       }
 
   render() {
     return (
       <div>
-          <form onSubmit={this.addEvent}>
+          <form onSubmit={this.updateEvent}>
               <h1> this is where we'll add the display events form </h1>
 
               <input  onChange={(event) => this.handleChange( 'title' , event)} 
@@ -58,7 +58,7 @@ class UpdateEvent extends Component {
 
                 <input  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
                                     type="text" id="" placeholder='bandcamp link'/>
-<button> submit</button>
+                <button> submit</button>
           </form>
          
       </div>
