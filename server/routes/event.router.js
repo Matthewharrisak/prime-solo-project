@@ -17,6 +17,8 @@ router.get('/', (req, res) => {
   });
 });
 
+
+//like button 
 /**
  * POST route template
  */
@@ -47,6 +49,18 @@ router.delete('/:id', (req, res) => {
   });
 });
 
+
+router.put('/:id', (req, res) => {
+  console.log('whats up form the put request?' , req.params.id);
+  let queryText = `UPDATE "events" SET "title" = 'not cool' WHERE "event_id" = ${req.params.id};`;
+  pool.queryText(queryText).then((result) => {
+    res.sendStatus(200);
+  }).catch((error) => {
+    console.log('error in the PUT' , error);
+    res.sendStatus(500)
+  });
+
+});
 
 
 // VALUES (${req.user.id}, ${req.body.newEvent.title} , ${req.body.newEvent.address} , ${req.body.newEvent.bandcamp} ,

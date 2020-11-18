@@ -17,6 +17,11 @@ class UserPage extends Component {
     
   }
 
+  updateEvent = (event) => {
+    console.log('whats up , were updating stuff!!!' , event.event_id);
+    this.props.dispatch({type: 'UPDATE_ITEM', payload: event });
+   }
+
   render() {
     return (
       <div>
@@ -26,6 +31,7 @@ class UserPage extends Component {
         <button> this button will route you to the add new event form</button>
         <h1> this is where we'll display user specific events </h1>
 
+        {/* <NewEventForm/> */}
 
         {this.props.store.event.event.map((funEvent) =>{
                 return <div key={funEvent.event_id}> {funEvent.title} {funEvent.address}
@@ -33,11 +39,7 @@ class UserPage extends Component {
 
 
                 <button onClick={(event) => this.deleteEvent(funEvent.event_id)}>Delete</button>    
-
-
-
-
-                 <button> update</button>
+                <button onClick={(event) => this.updateEvent(funEvent.event_id)}> update</button>
 
 
   
