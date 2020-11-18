@@ -52,7 +52,18 @@ router.delete('/:id', (req, res) => {
 
 router.put('/:id', (req, res) => {
   console.log('whats up form the put request?' , req.params.id);
-  let queryText = `UPDATE "events" SET "title" = 'not cool' WHERE "event_id" = ${req.params.id};`;
+  // let queryText = `UPDATE "events" SET "title" = 'not cool' WHERE "event_id" = ${req.params.id};`;
+
+
+  let queryText = `UPDATE "events" 
+  SET "user_id" = 1,
+  "title" = 'super cool!',
+  "address" = 'coolest street',
+  "description" = 'this is the sickesk gig' ,
+  "date" = '1/30/20' ,
+  "image_url" = 'www.sickassposter.com',
+  "bandcamp" = 'www.bandcamp.com' 
+  WHERE "event_id" = ${req.params.id};`;
   pool.query(queryText).then((result) => {
     res.sendStatus(200);
   }).catch((error) => {
