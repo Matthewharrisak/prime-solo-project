@@ -53,7 +53,7 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
   console.log('whats up form the put request?' , req.params.id);
   let queryText = `UPDATE "events" SET "title" = 'not cool' WHERE "event_id" = ${req.params.id};`;
-  pool.queryText(queryText).then((result) => {
+  pool.query(queryText).then((result) => {
     res.sendStatus(200);
   }).catch((error) => {
     console.log('error in the PUT' , error);

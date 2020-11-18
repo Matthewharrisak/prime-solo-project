@@ -6,6 +6,7 @@ function* eventSaga(){
     yield takeLatest('GOT_EVENTS' , fetchEvent)
     yield takeEvery('NEW_EVENT' , setEvent)
     yield takeEvery('DELETE_ITEM' , deleteItem)
+    yield takeEvery('UPDATE_ITEM' , updateItem)
 }
 
 
@@ -34,5 +35,17 @@ function* deleteItem(action) {
       console.log('ERROR in axios delete', error);
     }
   }
+
+
+  function* updateItem(action) {
+    yield console.log('UPDATING  ITEM:', action)
+    try {
+      yield axios.put(`/api/events/${action.payload}`);
+    } catch (error) {
+      console.log('ERROR in axios update', error);
+    }
+  }
+
+
 
 export default eventSaga;
