@@ -27,7 +27,8 @@ router.post('/', (req, res) => {
   console.log('logging from the POST request' , req.body);
   const queryText = `INSERT INTO "events" ("user_id", "title", "address" , "description", "date",  "image_url" , "bandcamp")
 VALUES ($1 , $2, $3, $4 , $5, $6 , $7);`;
-  pool.query(queryText, [req.user.id , req.body.newEvent.title, req.body.newEvent.address, req.body.newEvent.description, req.body.newEvent.date, req.body.newEvent.image_url, req.body.newEvent.bandcamp])
+  pool.query(queryText, [req.user.id , req.body.newEvent.title, req.body.newEvent.address, 
+    req.body.newEvent.description, req.body.newEvent.date, req.body.newEvent.image_url, req.body.newEvent.bandcamp])
   .then((result) => {
     res.sendStatus(200);
   }).catch((error) => {
@@ -51,20 +52,21 @@ router.delete('/:id', (req, res) => {
 
 
 router.put('/:id', (req, res) => {
-  console.log('whats up form the put request?' , req.params.id);
+  console.log('whats up form the put request?' , req.params.id , req.body);
   // let queryText = `UPDATE "events" SET "title" = 'not cool' WHERE "event_id" = ${req.params.id};`;
 
-
+  let id = req.params.id;
   let queryText = `UPDATE "events" 
-  SET "user_id" = 1,
-  "title" = 'not cool at all',
-  "address" = 'coolest street',
-  "description" = 'this is the sickesk gig' ,
-  "date" = '1/30/20' ,
-  "image_url" = 'www.sickassposter.com',
-  "bandcamp" = 'www.bandcamp.com' 
-  WHERE "event_id" = ${req.params.id};`;
-  pool.query(queryText).then((result) => {
+  SET "user_id" = $1,
+  "title" = $2,
+  "address" = $3,
+  "description" = $4 ,
+  "date" = $5 ,
+  "image_url" = $6,
+  "bandcamp" = $7 
+  WHERE "event_id" = $8;`;
+  pool.query(queryText , [req.user.id , req.body.title, req.body.address, 
+    req.body.description, req.body.date, req.body.image_url, req.body.bandcamp, id]).then((result) => {
     res.sendStatus(200);
   }).catch((error) => {
     console.log('error in the PUT' , error);

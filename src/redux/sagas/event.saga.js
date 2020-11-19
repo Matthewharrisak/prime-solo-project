@@ -40,7 +40,7 @@ function* deleteItem(action) {
   function* updateItem(action) {
     yield console.log('UPDATING  ITEM:', action)
     try {
-      yield axios.put(`/api/events/${action.payload}`);
+      yield axios.put(`/api/events/${action.payload.event_id}` , action.payload);
     } catch (error) {
       console.log('ERROR in axios update', error);
     }
