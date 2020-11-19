@@ -5,7 +5,9 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 class ViewEvents extends Component {
   // this component displays all events from the database. 
 
-
+  componentDidMount = () => {
+    this.props.dispatch({ type: 'GOT_EVENTS'});
+  }
   render() {
     return (
       <div>

@@ -20,32 +20,21 @@ class LandingPage extends Component {
   render() {
     return (
       <div className="container">
-        <h2>{this.state.heading}</h2>
-<ViewEvents/>
+        {/* <h2>{this.state.heading}</h2> */}
+        <ViewEvents/>
         <div className="grid">
           <div className="grid-col grid-col_8">
-            <p>
-          
-            </p>
-
-            <p>
-            
-            </p>
-
-            <p>
-           
-            </p>
           </div>
 
           <div className="grid-col grid-col_4">
-            <RegisterForm />
+            {/* <RegisterForm /> */}
 
-            <center>
+            {/* <center>
               <h4>Already a Member?</h4>
               <button className="btn btn_sizeSm" onClick={this.onLogin}>
                 Login
               </button>
-            </center>
+            </center> */}
           </div>
         </div>
       </div>
