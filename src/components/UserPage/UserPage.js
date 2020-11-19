@@ -9,19 +9,9 @@ class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
   state={
+    eventToUpdate: [],
     displayForm: false
   }
-
-//   state={
-//     newEvent:{
-//         title: '',
-//         address: '',
-//         description: '',
-//         date: '',
-//         image_url: '',
-//         bandcamp: '',
-//      }
-// }
 
   componentDidMount = () => {
     this.props.dispatch({ type: 'GOT_EVENTS'});
@@ -30,20 +20,20 @@ class UserPage extends Component {
   deleteEvent = (event) => {
     console.log('whats up, were deleting suttf', event.event_id);
     this.props.dispatch({type: 'DELETE_ITEM', payload: event});
-    
-  }
-  updateEvent = (event) => {
+   }
+
+  updateEvent = (funEvent) => {
   
     this.setState({
-      displayForm: true
+    eventToUpdate: [funEvent]
     });
-    console.log('whats up , were updating stuff!!!' , event.event_id);
-    this.props.dispatch({type: 'UPDATE_ITEM', payload: event})
+    // console.log('whats up , were updating stuff!!!' , event.event_id);
+    // this.props.dispatch({type: 'UPDATE_ITEM', payload: event})
    };
 
    displayUpdateForm =() => {
      if(this.state.displayForm) {
-       return <UpdateEvent/>;
+       return <UpdateEvent />;
      }
    }
 
@@ -57,14 +47,15 @@ class UserPage extends Component {
         <h1> this is where we'll display user specific events </h1>
 
         {/* <NewEventForm/> */}
-       {this.displayUpdateForm()}
+       {this.state.eventToUpdate.map(funEvent => { return <UpdateEvent funEvent = { funEvent }/>})}
+       
         {this.props.store.event.event.map((funEvent) =>{
                 return <div key={funEvent.event_id}> {funEvent.title} {funEvent.address}
                 {funEvent.description} {funEvent.date} {funEvent.image_url} 
 
 
                 <button onClick={(event) => this.deleteEvent(funEvent.event_id)}>Delete</button>    
-                <button onClick={(event) => this.updateEvent(funEvent.event_id)}> update</button>
+                <button onClick={() => this.updateEvent(funEvent)}> update</button>
 
 
                 </div>
@@ -76,5 +67,7 @@ class UserPage extends Component {
   }
 }
 
+
+// { return <UpdateEvent funEvent = { funEvent }/> }
 // this allows us to use <App /> in index.js
 export default connect(mapStoreToProps)(UserPage);

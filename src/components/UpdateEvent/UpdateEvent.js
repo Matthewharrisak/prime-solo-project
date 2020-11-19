@@ -8,6 +8,16 @@ import UserPage from '../UserPage/UserPage';
 class UpdateEvent extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
+  state={
+    newEvent:{
+        title: '',
+        address: '',
+        description: '',
+        date: '',
+        image_url: '',
+        bandcamp: '',
+     }
+}
   
 
     handleChange= (keyname, event) => {
@@ -23,16 +33,19 @@ class UpdateEvent extends Component {
 
    
 
-    updateEvent = (event) => {
-        console.log('whats up , were updating stuff!!!' , event.event_id);
-        this.props.dispatch({type: 'UPDATE_ITEM', payload:  {
-            title: '',
-            address: '',
-            description: '',
-            date: '',
-            image_url: '',
-            bandcamp: '',
-         } });
+    updateEvent = () => {
+        console.log('whats up , were updating stuff!!!' , this.state);
+        let event = {  
+          title: this.state.newEvent.title,
+          address: this.state.newEvent.address,
+          description: this.state.newEvent.description,
+          date: this.state.newEvent.date,
+          image_url: this.state.newEvent.image_url,
+          bandcamp: this.state.newEvent.bandcamp,
+          event_id: this.props.funEvent.event_id
+        } 
+        this.props.dispatch({type: 'UPDATE_ITEM', payload: event
+        });
        }
 
   render() {
