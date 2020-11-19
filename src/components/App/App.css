@@ -110,3 +110,11 @@ input {
   margin: 5px;
   margin-bottom: 10px;
 }
+
+#landingTable {
+  border: 1px solid black;
+  
+}
+#tableRow {
+  border: 1px solid black;
+}

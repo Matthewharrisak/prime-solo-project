@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
 class ViewEvents extends Component {
   // this component displays all events from the database. 
 
@@ -16,10 +15,10 @@ class ViewEvents extends Component {
      {this.props.store.event.event.map((event) =>{
                 return  <table key={event.event_id} id='landingTable'> 
                 <tr>
-                  <th> TITLE!!!</th>
-                  <th> address</th>
+                  <th > TITLE!!!</th>
+                  <th > address</th>
                   <th> description</th>
-                  <th> Image</th>
+                  <th > Image</th>
                </tr>
                <tr>
                <td> {event.title}</td>  
