@@ -14,11 +14,24 @@ class ViewEvents extends Component {
      <h1> whats up from the view events page </h1>
      
      {this.props.store.event.event.map((event) =>{
-                return <div key={event.event_id}> {event.title} {event.address}
-                {event.description} {event.date} {event.image_url} 
+                return  <table key={event.event_id} id='landingTable'> 
+                <tr>
+                  <th> TITLE!!!</th>
+                  <th> address</th>
+                  <th> description</th>
+                  <th> Image</th>
+               </tr>
+               <tr>
+               <td> {event.title}</td>  
+               <td> {event.address}</td>  
+                <td> {event.description} </td>
+              <td>{event.date} </td>  
+               <td> {event.image_url}  </td> 
+               </tr>
+               
 
 
-                </div>
+                </table>
               })}
 
 
