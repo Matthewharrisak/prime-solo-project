@@ -7,6 +7,7 @@ function* eventSaga(){
     yield takeEvery('NEW_EVENT' , setEvent)
     yield takeEvery('DELETE_ITEM' , deleteItem)
     yield takeEvery('UPDATE_ITEM' , updateItem)
+    yield takeEvery('GET_DETAILS' , getDetails)
 }
 
 
@@ -17,6 +18,15 @@ function* fetchEvent() {
     }catch(error) {
         console.log('error from fetch event saga' ,error);
      }
+}
+
+function* getDetails(action) {
+  try{
+      const eventResponse = yield axios.get(`/api/events/${action.payload}`);
+      yield put({type: 'SET_EVENT', payload: eventResponse.data})
+  }catch(error) {
+      console.log('error from fetch event saga' ,error);
+   }
 }
 
 function* setEvent(action) {

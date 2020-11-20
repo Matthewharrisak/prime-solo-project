@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 // import Iframe from 'react-iframe'
+import { withRouter } from "react-router";
 
 
-
-class NewEventForm extends Component {
+class EventDetails extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
     // fires off funtions on pageload
@@ -25,24 +25,14 @@ class NewEventForm extends Component {
                 {event.description} {event.date} {event.image_url} 
 
 
-                {/* <Iframe style="border: 0; width: 100%; height: 120px;"
-               src="https://bandcamp.com/EmbeddedPlayer/album=3651962689/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" 
-              seamless><a href="https://ggrraavvee.bandcamp.com/album/goodbye-nowhere">
-              Growing Down by 
-            Termination Dust</a></Iframe> */}
+     
 
                 </div>
               })}
-              {/* {JSON.stringify(this.props.store.event)} */}
-         
-
-
-
-
       </div>
     );
   }
 }
 
 // this allows us to use <App /> in index.js
-export default connect(mapStoreToProps)(NewEventForm);
+export default connect(mapStoreToProps)(EventDetails);
