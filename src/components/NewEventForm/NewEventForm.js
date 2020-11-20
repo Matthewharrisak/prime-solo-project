@@ -58,11 +58,9 @@ class NewEventForm extends Component {
 
                 <input  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
                                     type="text" id="" placeholder='bandcamp link'/>
-<button> submit</button>
+                  <button> submit</button>
           </form>
-          <EventDetails/>
-          {/* <UserPage/> */}
-      </div>
+           </div>
     );
   }
 }

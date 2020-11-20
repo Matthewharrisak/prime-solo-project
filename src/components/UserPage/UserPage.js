@@ -4,6 +4,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import NewEventForm from '../NewEventForm/NewEventForm';
 import UpdateEvent from '../UpdateEvent/UpdateEvent';
+import logger from 'redux-logger';
 
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
@@ -14,7 +15,7 @@ class UserPage extends Component {
   }
 
   componentDidMount = () => {
-    this.props.dispatch({ type: 'GOT_EVENTS'});
+    this.props.dispatch({ type: 'USER_EVENT' , payload: this.props.store.user.id});
   }
 
   deleteEvent = (event) => {
@@ -36,6 +37,7 @@ class UserPage extends Component {
        return <UpdateEvent />;
      }
    }
+
    goToEventForm = () => {
      this.props.history.push('/NewEventForm');
    }
@@ -49,7 +51,7 @@ class UserPage extends Component {
         <LogOutButton className="log-in" />
 
 
-        <button onClick={this.goToEventForm} > this button will route you to the add new event form</button>
+        <button onClick={this.goToEventForm} > add new event </button>
         <h1> this is where we'll display user specific events </h1>
 
         {/* <NewEventForm/> */}

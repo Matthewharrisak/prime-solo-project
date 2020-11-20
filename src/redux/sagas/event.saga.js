@@ -8,6 +8,8 @@ function* eventSaga(){
     yield takeEvery('DELETE_ITEM' , deleteItem)
     yield takeEvery('UPDATE_ITEM' , updateItem)
     yield takeEvery('GET_DETAILS' , getDetails)
+    yield takeLatest('USER_EVENT' , userEvent)
+
 }
 
 
@@ -22,10 +24,21 @@ function* fetchEvent() {
 
 function* getDetails(action) {
   console.log(action);
-  
-  try{
+   try{
       const eventResponse = yield axios.get(`/api/events/${action.payload.event_id}`);
       yield put({type: 'SET_EVENT', payload: eventResponse.data})
+  }catch(error) {
+      // console.log('error from fetch event saga' ,error);
+   }
+}
+
+function* userEvent(action) {
+  console.log('in the SAGA LOL ');
+  
+
+   try{
+    const eventResponse = yield axios.get(`/api/events/userEvent/${action.payload.user_id}`);
+    yield put({type: 'SET_EVENT', payload: eventResponse.data})
   }catch(error) {
       // console.log('error from fetch event saga' ,error);
    }
@@ -57,6 +70,7 @@ function* deleteItem(action) {
       console.log('ERROR in axios update', error);
     }
   }
+
 
 
 

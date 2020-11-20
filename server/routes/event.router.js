@@ -1,7 +1,9 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const router = express.Router();
-
+const {
+  rejectUnauthenticated,
+} = require('../modules/authentication-middleware');
 /**
  * GET route template
  */
@@ -22,6 +24,22 @@ router.get('/:id', (req, res) => {
   let id = req.params.id;
   const queryText = `SELECT * FROM events WHERE "events"."event_id" = $1;`;
   pool.query(queryText , [id])
+  .then((result) => {
+      res.send(result.rows);
+  }).catch((error) =>{
+    console.log(`Error with Query` , error);
+    res.sendStatus(500);
+  });
+});
+
+
+router.get('/userEvent/:id',  (req, res) => {
+  // GET route code here
+  // let id = (req.user.id);
+  console.log(req.user);
+  
+  const queryText = `SELECT * FROM events WHERE "events"."user_id" = 3;`;
+  pool.query(queryText)
   .then((result) => {
       res.send(result.rows);
   }).catch((error) =>{
