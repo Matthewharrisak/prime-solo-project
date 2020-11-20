@@ -11,7 +11,7 @@ class EventDetails extends Component {
 
     // fires off funtions on pageload
     componentDidMount = () => {
-      this.props.dispatch({ type: 'GOT_EVENTS'});
+     this.props.dispatch({ type: 'GET_DETAILS'});
     
       
     } 

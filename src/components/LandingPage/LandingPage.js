@@ -23,8 +23,8 @@ componentDidMount = () => {
   };
 
   moreDetails = (moreInfo) => {
-    // this.props.history.push('/EventDetails');
-    // this.props.dispatch({type: 'GET_DETAILS', payload: moreInfo});
+    this.props.history.push('/EventDetails');
+    this.props.dispatch({type: 'GET_DETAILS', payload: moreInfo});
     console.log(moreInfo);
   }
 
@@ -37,6 +37,7 @@ componentDidMount = () => {
      
      {this.props.store.event.event.map((event) =>{
                 return  <table key={event.event_id} id='landingTable'> 
+                <tbody>
                 <tr>
                   <th > TITLE!!!</th>
                    {/* <th > address</th>
@@ -53,6 +54,7 @@ componentDidMount = () => {
               <td>{event.date} </td>  
                <td> {event.image_url}  </td>  */}
                </tr>
+               </tbody>
              </table>
               })}
 

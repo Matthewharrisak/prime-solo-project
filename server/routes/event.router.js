@@ -17,6 +17,18 @@ router.get('/', (req, res) => {
   });
 });
 
+router.get('/:id', (req, res) => {
+  // GET route code here
+  let id = req.params.id;
+  const queryText = `SELECT * FROM events WHERE "events"."event_id" = $1;`;
+  pool.query(queryText , [id])
+  .then((result) => {
+      res.send(result.rows);
+  }).catch((error) =>{
+    console.log(`Error with Query` , error);
+    res.sendStatus(500);
+  });
+});
 
 //like button 
 /**
