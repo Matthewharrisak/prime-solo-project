@@ -27,7 +27,7 @@ function* getDetails(action) {
       const eventResponse = yield axios.get(`/api/events/${action.payload.event_id}`);
       yield put({type: 'SET_EVENT', payload: eventResponse.data})
   }catch(error) {
-      console.log('error from fetch event saga' ,error);
+      // console.log('error from fetch event saga' ,error);
    }
 }
 

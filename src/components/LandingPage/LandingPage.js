@@ -8,7 +8,6 @@ import './LandingPage.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import ViewEvents from '../ViewEvents/ViewEvents';
 import EventDetails from '../EventDetails/EventDetails';
-
 class LandingPage extends Component {
   // state = {
   //   heading: 'Class Component',
@@ -57,7 +56,6 @@ componentDidMount = () => {
                </tbody>
              </table>
               })}
-
 
       </div> 
 

@@ -23,6 +23,7 @@ import ViewEvents from '../ViewEvents/ViewEvents';
 
 import './App.css';
 import EventDetails from '../EventDetails/EventDetails';
+import NewEventForm from '../NewEventForm/NewEventForm';
 
 class App extends Component {
   componentDidMount() {
@@ -45,7 +46,7 @@ class App extends Component {
               path="/about"
               component={AboutPage}
             />
-
+            <Route exact path="/NewEventForm" component={NewEventForm}/>
             <Route exact path="/EventDetails" component={EventDetails}/>
 
             {/* For protected routes, the view could show one of several things on the same route.
