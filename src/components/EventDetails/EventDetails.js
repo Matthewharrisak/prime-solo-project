@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-// import Iframe from 'react-iframe'
-import { withRouter } from "react-router";
 
+//Styling and NPM components
+// import Iframe from 'react-iframe'
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 class EventDetails extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
@@ -19,15 +21,25 @@ class EventDetails extends Component {
     return (
       <div>
           
-              <h1> this is where we'll add the display events form </h1>
+              <h1> Full Details!! </h1>
               {this.props.store.event.event.map((event) =>{
-                return <div key={event.event_id}> {event.title} {event.address}
-                {event.description} {event.date} {event.image_url} 
+                return 
+                // <div key={event.event_id}> {event.title} {event.address}
+                // {event.description} {event.date} {event.image_url} 
+                 <ListItem key={event.event_id} id='landingTable'> 
+                 {/* <ListItem key={event.event_id} id='landingTable'> 
+                 </ListItem>     */}
 
-
+                 <ListItemText primary={event.title} />
+                 <ListItemText primary={event.address}/>
+                 <ListItemText primary={event.description}/>
+                 <ListItemText primary={event.date} />
+                 <ListItemText primary={event.address}/>
+                 <ListItemText primary={event.address}/>
+                 </ListItem>    
      
 
-                </div>
+                {/* </div> */}
               })}
       </div>
     );
