@@ -35,11 +35,11 @@ router.get('/:id', (req, res) => {
 
 router.get('/userEvent/:id',  (req, res) => {
   // GET route code here
-  // let id = (req.user.id);
+  let id = (req.user.id);
   console.log(req.user);
   
-  const queryText = `SELECT * FROM events WHERE "events"."user_id" = 3;`;
-  pool.query(queryText)
+  const queryText = `SELECT * FROM events WHERE "events"."user_id" = $1;`;
+  pool.query(queryText, [id])
   .then((result) => {
       res.send(result.rows);
   }).catch((error) =>{
@@ -104,11 +104,6 @@ router.put('/:id', (req, res) => {
   });
 
 });
-
-
-// VALUES (${req.user.id}, ${req.body.newEvent.title} , ${req.body.newEvent.address} , ${req.body.newEvent.bandcamp} ,
-//   ${req.body.newEvent.image_url} , ${req.body.newEvent.date} ,  ${req.body.newEvent.description});
-
 
 
 
