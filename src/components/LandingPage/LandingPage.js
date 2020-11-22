@@ -11,12 +11,19 @@ import EventDetails from '../EventDetails/EventDetails';
 
 // Material UI COMPONETNS
 import Button from '@material-ui/core/Button';
-
-
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 class LandingPage extends Component {
   // state = {
   //   heading: 'Class Component',
   // };
+
+
+  
+      // <ListItem button style={style} key={index}>
+      //   <ListItemText primary={`Item ${index + 1}`} />
+      // </ListItem>
+  
 
 componentDidMount = () => {
     this.props.dispatch({ type: 'GOT_EVENTS'});
@@ -40,33 +47,15 @@ componentDidMount = () => {
      <h1> Welcome To CoolShowsCalender.com</h1>
      
      {this.props.store.event.event.map((event) =>{
-                return  <table key={event.event_id} id='landingTable'> 
-                <tbody>
-                <tr>
-                  <th > TITLE!!!</th>
-                   {/* <th > address</th>
-                  <th> description</th>
-                  <th > Image</th>  */}
-               </tr>
-               <tr>
-               <td> {event.title}</td>  
-
+                return  <ListItem key={event.event_id} id='landingTable'> 
+                
+                 <ListItemText primary= {event.title} />
                <Button variant="contained" color="secondary"
-
-               onClick={() => this.moreDetails(event)}>
-        more info!!
-      </Button>
-
-               {/* <button onClick={() => this.moreDetails(event)}> more info!! </button> */}
-
-               {/* <td> {event.address}</td>  
-                <td> {event.description} </td>
-              <td>{event.date} </td>  
-               <td> {event.image_url}  </td>  */}
-               </tr>
-               </tbody>
-             </table>
-              })}
+                onClick={() => this.moreDetails(event)}>
+                                                          more info!!
+               </Button>
+                 </ListItem>       
+       })}
 
       </div> 
 
