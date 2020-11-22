@@ -8,6 +8,11 @@ import './LandingPage.css';
 import RegisterForm from '../RegisterForm/RegisterForm';
 import ViewEvents from '../ViewEvents/ViewEvents';
 import EventDetails from '../EventDetails/EventDetails';
+
+// Material UI COMPONETNS
+import Button from '@material-ui/core/Button';
+
+
 class LandingPage extends Component {
   // state = {
   //   heading: 'Class Component',
@@ -46,7 +51,13 @@ componentDidMount = () => {
                <tr>
                <td> {event.title}</td>  
 
-               <button onClick={() => this.moreDetails(event)}> more info!! </button>
+               <Button variant="contained" color="secondary"
+
+               onClick={() => this.moreDetails(event)}>
+        more info!!
+      </Button>
+
+               {/* <button onClick={() => this.moreDetails(event)}> more info!! </button> */}
 
                {/* <td> {event.address}</td>  
                 <td> {event.description} </td>
