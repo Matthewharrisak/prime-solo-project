@@ -9,6 +9,12 @@ import logger from 'redux-logger';
 // MATERIAL UI COMPONENTS
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import TextField from '@material-ui/core/TextField';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
@@ -17,6 +23,14 @@ class UserPage extends Component {
     eventToUpdate: [],
     displayForm: false
   }
+
+  // handleClickOpen = () => {
+  //   setOpen(true);
+  // };
+
+  // handleClose = () => {
+  //   setOpen(false);
+  // };
 
   componentDidMount = () => {
     this.props.dispatch({ type: 'USER_EVENT' , payload: this.props.store.user.id});
@@ -28,13 +42,9 @@ class UserPage extends Component {
    }
 
   updateEvent = (funEvent) => {
-  
     this.setState({
     eventToUpdate: [funEvent]
-    });
-    // console.log('whats up , were updating stuff!!!' , event.event_id);
-    // this.props.dispatch({type: 'UPDATE_ITEM', payload: event})
-   };
+    });};
 
    displayUpdateForm =() => {
      if(this.state.displayForm) {
@@ -56,9 +66,9 @@ class UserPage extends Component {
 
 
         <button onClick={this.goToEventForm} > add new event </button>
-        <h1> this is where we'll display user specific events </h1>
+        <h1> Your Events! </h1>
 
-        {/* <NewEventForm/> */}
+      
        {this.state.eventToUpdate.map(funEvent => { return <UpdateEvent funEvent = { funEvent }/>})}
        
         {this.props.store.event.event.map((funEvent) =>{
@@ -70,16 +80,10 @@ class UserPage extends Component {
                   <iframe src={funEvent.image_url} alt="golf"/> 
                   <ListItemText primary={funEvent.description}/>
                   <ListItemText primary={funEvent.date}/>
-
-             
-
-
-                <button onClick={(event) => this.deleteEvent(funEvent.event_id)}>Delete</button>    
-                <button onClick={() => this.updateEvent(funEvent)}> update</button>
-
-
-                </div>
-              })}
+                  <button onClick={(event) => this.deleteEvent(funEvent.event_id)}>Delete</button>    
+                  <button onClick={() => this.updateEvent(funEvent)}> update</button>
+                  </div>
+         })}
               
             
       </div>

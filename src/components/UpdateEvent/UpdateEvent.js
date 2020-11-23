@@ -6,7 +6,6 @@ import EventDetails from '../EventDetails/EventDetails';
 import UserPage from '../UserPage/UserPage';
 
 class UpdateEvent extends Component {
-  // this component doesn't do much to start, just renders some user info to the DOM
 
   state={
     newEvent:{
@@ -22,8 +21,6 @@ class UpdateEvent extends Component {
 
     handleChange= (keyname, event) => {
         event.preventDefault();
-        // console.log('this is our new state' , this.state);
-        
         this.setState({
           newEvent:{
             ...this.state.newEvent,
