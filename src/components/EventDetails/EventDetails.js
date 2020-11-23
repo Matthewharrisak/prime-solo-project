@@ -8,6 +8,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
+
 class EventDetails extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
@@ -28,7 +29,7 @@ class EventDetails extends Component {
 
                 <ListItemText primary={event.title}/>
                 <ListItemText primary={event.address}/>
-                <ListItem> <iframe src={event.image_url} alt="golf"/> </ListItem> 
+                 <iframe src={event.image_url} alt="golf"/> 
                 <ListItemText primary={event.description}/>
                 <ListItemText primary={event.date}/>
                 </ListItem>  

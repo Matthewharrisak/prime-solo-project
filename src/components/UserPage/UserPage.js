@@ -6,6 +6,10 @@ import NewEventForm from '../NewEventForm/NewEventForm';
 import UpdateEvent from '../UpdateEvent/UpdateEvent';
 import logger from 'redux-logger';
 
+// MATERIAL UI COMPONENTS
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
@@ -58,8 +62,16 @@ class UserPage extends Component {
        {this.state.eventToUpdate.map(funEvent => { return <UpdateEvent funEvent = { funEvent }/>})}
        
         {this.props.store.event.event.map((funEvent) =>{
-                return <div key={funEvent.event_id}> {funEvent.title} {funEvent.address}
-                {funEvent.description} {funEvent.date} {funEvent.image_url} 
+                return <div key={funEvent.event_id}> 
+                 
+
+                  <ListItemText primary={funEvent.title}/>
+                  <ListItemText primary={funEvent.address}/>
+                  <iframe src={funEvent.image_url} alt="golf"/> 
+                  <ListItemText primary={funEvent.description}/>
+                  <ListItemText primary={funEvent.date}/>
+
+             
 
 
                 <button onClick={(event) => this.deleteEvent(funEvent.event_id)}>Delete</button>    
