@@ -22,20 +22,24 @@ class EventDetails extends Component {
       <div>
           
               <h1> Full Details!! </h1>
+             
               {this.props.store.event.event.map((event) =>{
-                return   <ListItem key={event.event_id} id='landingTable'> 
-              
+                return <ListItem key={event.event_id} id='landingTable'> 
 
                 <ListItemText primary={event.title}/>
                 <ListItemText primary={event.address}/>
+                <ListItem> <iframe src={event.image_url} alt="golf"/> </ListItem> 
                 <ListItemText primary={event.description}/>
                 <ListItemText primary={event.date}/>
                 </ListItem>  
             
              
 
+                
+
                 {/* </div> */}
               })}
+              
       </div>
     );
   }
