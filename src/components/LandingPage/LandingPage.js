@@ -45,10 +45,10 @@ componentDidMount = () => {
                 return  <ListItem key={event.event_id} id='landingTable'> 
                 
                  <ListItemText primary= {event.title} />
-                 
+                 <ListItemText primary= {event.date} />
                <Button variant="contained" color="secondary"
                 onClick={() => this.moreDetails(event)}>
-                                                          more info!!
+                 more info!!
                </Button>
                  </ListItem>       
        })}
