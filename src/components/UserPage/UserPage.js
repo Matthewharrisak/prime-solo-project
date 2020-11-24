@@ -10,12 +10,7 @@ import logger from 'redux-logger';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-
+import DialogBox from '../DialogBox/DialogBox';
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
@@ -23,14 +18,6 @@ class UserPage extends Component {
     eventToUpdate: [],
     displayForm: false
   }
-
-  // handleClickOpen = () => {
-  //   setOpen(true);
-  // };
-
-  // handleClose = () => {
-  //   setOpen(false);
-  // };
 
   componentDidMount = () => {
     this.props.dispatch({ type: 'USER_EVENT' , payload: this.props.store.user.id});
@@ -42,15 +29,15 @@ class UserPage extends Component {
    }
 
   updateEvent = (funEvent) => {
+    console.log('funevent ID?' , funEvent)
     this.setState({
     eventToUpdate: [funEvent]
-    });};
+    });
+  console.log(this.state);
+  
+  };
 
-   displayUpdateForm =() => {
-     if(this.state.displayForm) {
-       return <UpdateEvent />;
-     }
-   }
+ 
 
    goToEventForm = () => {
      this.props.history.push('/NewEventForm');
@@ -69,28 +56,32 @@ class UserPage extends Component {
         <h1> Your Events! </h1>
 
       
-       {this.state.eventToUpdate.map(funEvent => { return <UpdateEvent funEvent = { funEvent }/>})}
-       
-        {this.props.store.event.event.map((funEvent) =>{
+       {this.state.eventToUpdate.map(funEvent => { return <DialogBox funEvent = { funEvent }/>})}
+      
+       {this.props.store.event.event.map((funEvent) =>{
                 return <div key={funEvent.event_id}> 
                  
 
                   <ListItemText primary={funEvent.title}/>
                   <ListItemText primary={funEvent.address}/>
-                  <iframe src={funEvent.image_url} alt="golf"/> 
+                  <img src={funEvent.image_url} alt="golf"/> 
                   <ListItemText primary={funEvent.description}/>
                   <ListItemText primary={funEvent.date}/>
-                  <button onClick={(event) => this.deleteEvent(funEvent.event_id)}>Delete</button>    
+                  <button onClick={(event) => this.deleteEvent(funEvent.event_id)}>Delete</button>  
+
                   <button onClick={() => this.updateEvent(funEvent)}> update</button>
+                  <DialogBox funEvent = { funEvent }/>
+                  {/* <DialogBox onClick={() => this.updateEvent(funEvent)}/> */}
+                  
                   </div>
-         })}
-              
+         })} 
+              <DialogBox  />
             
       </div>
     );
   }
 }
-
+// get updateevent to Dialog box -- or submit button in box in update button 
 
 // { return <UpdateEvent funEvent = { funEvent }/> }
 // this allows us to use <App /> in index.js

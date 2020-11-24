@@ -30,8 +30,8 @@ class UpdateEvent extends Component {
 
    
 
-    updateEvent = () => {
-        console.log('whats up , were updating stuff!!!' , this.state);
+    updateEvent = (event_id) => {
+        console.log('whats up , were updating stuff!!!'  ,this.state, event_id);
         let event = {  
           title: this.state.newEvent.title,
           address: this.state.newEvent.address,
@@ -39,8 +39,10 @@ class UpdateEvent extends Component {
           date: this.state.newEvent.date,
           image_url: this.state.newEvent.image_url,
           bandcamp: this.state.newEvent.bandcamp,
-          event_id: this.props.funEvent.event_id
+          event_id: event_id
         } 
+        console.log(event);
+        
         this.props.dispatch({type: 'UPDATE_ITEM', payload: event
         });
        }
@@ -48,8 +50,7 @@ class UpdateEvent extends Component {
   render() {
     return (
       <div>
-          <form onSubmit={this.updateEvent}>
-              <h1> this is where we'll add the display events form </h1>
+          <form onSubmit={() => {this.updateEvent(this.props.funEvent.event_id)}}>
 
               <input  onChange={(event) => this.handleChange( 'title' , event)} 
                     type="text" id="" placeholder='title'/>
