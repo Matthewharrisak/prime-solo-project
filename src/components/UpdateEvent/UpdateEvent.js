@@ -4,6 +4,8 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import EventDetails from '../EventDetails/EventDetails';
 import UserPage from '../UserPage/UserPage';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class UpdateEvent extends Component {
 
@@ -52,24 +54,24 @@ class UpdateEvent extends Component {
       <div>
           <form onSubmit={() => {this.updateEvent(this.props.funEvent.event_id)}}>
 
-              <input  onChange={(event) => this.handleChange( 'title' , event)} 
+              <TextField  onChange={(event) => this.handleChange( 'title' , event)} 
                     type="text" id="" placeholder='title'/>
 
-                <input  onChange={(event) => this.handleChange( 'address' , event)} 
+                <TextField onChange={(event) => this.handleChange( 'address' , event)} 
                     type="text" id="" placeholder='address'/>
 
-                <input  onChange={(event) => this.handleChange( 'description' , event)} 
+                <TextField   onChange={(event) => this.handleChange( 'description' , event)} 
                                     type="text" id="" placeholder='description'/>
 
-                <input  onChange={(event) => this.handleChange( 'date' , event)} 
+                <TextField   onChange={(event) => this.handleChange( 'date' , event)} 
                                     type="text" id="" placeholder='date'/>
 
-                <input  onChange={(event) => this.handleChange( 'image_url' , event)} 
-                                    type="text" id="" placeholder='image link'/>
+                <TextField  onChange={(event) => this.handleChange( 'image_url' , event)} 
+                                                    type="text" id="" placeholder='image link'/>
 
-                <input  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
-                                    type="text" id="" placeholder='bandcamp link'/>
-                <button> submit</button>
+                <TextField  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
+                                                    type="text" id="" placeholder='bandcamp link'/>
+                <button> submit </button>
           </form>
          
       </div>

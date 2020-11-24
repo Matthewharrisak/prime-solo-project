@@ -11,12 +11,14 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import TextField from '@material-ui/core/TextField';
 import DialogBox from '../DialogBox/DialogBox';
+import Button from '@material-ui/core/Button';
+
+
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
   state={
-    eventToUpdate: [],
-    displayForm: false
+    eventToUpdate: []
   }
 
   componentDidMount = () => {
@@ -48,16 +50,14 @@ class UserPage extends Component {
     return (
       <div>
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
-        <p>Your ID is: {this.props.store.user.id}</p>
-        <LogOutButton className="log-in" />
+        {/* <p>Your ID is: {this.props.store.user.id}</p> */}
+        {/* <LogOutButton className="log-in" /> */}
 
 
-        <button onClick={this.goToEventForm} > add new event </button>
+        <button onClick={this.goToEventForm}> add new event </button>
         <h1> Your Events! </h1>
 
-      
-       {this.state.eventToUpdate.map(funEvent => { return <DialogBox funEvent = { funEvent }/>})}
-      
+          
        {this.props.store.event.event.map((funEvent) =>{
                 return <div key={funEvent.event_id}> 
                  
@@ -67,22 +67,15 @@ class UserPage extends Component {
                   <img src={funEvent.image_url} alt="golf"/> 
                   <ListItemText primary={funEvent.description}/>
                   <ListItemText primary={funEvent.date}/>
-                  <button onClick={(event) => this.deleteEvent(funEvent.event_id)}>Delete</button>  
-
-                  <button onClick={() => this.updateEvent(funEvent)}> update</button>
-                  <DialogBox funEvent = { funEvent }/>
-                  {/* <DialogBox onClick={() => this.updateEvent(funEvent)}/> */}
-                  
+                  <Button onClick={() => this.deleteEvent(funEvent.event_id)}>Delete</Button>  
+                 <DialogBox funEvent = { funEvent }/>                  
                   </div>
          })} 
-              <DialogBox  />
             
       </div>
     );
   }
 }
-// get updateevent to Dialog box -- or submit button in box in update button 
 
-// { return <UpdateEvent funEvent = { funEvent }/> }
 // this allows us to use <App /> in index.js
 export default connect(mapStoreToProps)(UserPage);

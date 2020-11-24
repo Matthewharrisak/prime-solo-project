@@ -25,47 +25,28 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
   const handleClose = () => {
     setOpen(false);
   };
-// boolean - open and close 
+
 
 
 
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
-        Open form dialog
+        Update
       </Button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">Edit Event</DialogTitle>
+        {/* <DialogTitle id="form-dialog-title">Edit Event</DialogTitle> */}
         <DialogContent>
           <DialogContentText>
           What do you want to edit?
           </DialogContentText>
-          {/* <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
-          />
-            <TextField
-            autoFocus
-            margin="dense"
-            id="name"
-            label="Email Address"
-            type="email"
-            fullWidth
 
-          /> */}
             <UpdateEvent funEvent = { funEvent.funEvent } />
 
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
             Cancel
-          </Button>
-          <Button onClick={handleClose} color="primary">
-            Subscribe
           </Button>
         </DialogActions>
       </Dialog>
