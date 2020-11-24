@@ -9,7 +9,7 @@ const {
  */
 router.get('/', (req, res) => {
   // GET route code here
-  const queryText = `SELECT * FROM events;`;
+  const queryText = `SELECT * FROM events RETURNING id;`;
   pool.query(queryText)
   .then((result) => {
       res.send(result.rows);

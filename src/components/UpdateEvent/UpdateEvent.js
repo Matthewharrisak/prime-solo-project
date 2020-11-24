@@ -4,6 +4,8 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import EventDetails from '../EventDetails/EventDetails';
 import UserPage from '../UserPage/UserPage';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
 class UpdateEvent extends Component {
 
@@ -30,8 +32,8 @@ class UpdateEvent extends Component {
 
    
 
-    updateEvent = () => {
-        console.log('whats up , were updating stuff!!!' , this.state);
+    updateEvent = (event_id) => {
+        console.log('whats up , were updating stuff!!!'  ,this.state, event_id);
         let event = {  
           title: this.state.newEvent.title,
           address: this.state.newEvent.address,
@@ -39,8 +41,10 @@ class UpdateEvent extends Component {
           date: this.state.newEvent.date,
           image_url: this.state.newEvent.image_url,
           bandcamp: this.state.newEvent.bandcamp,
-          event_id: this.props.funEvent.event_id
+          event_id: event_id
         } 
+        console.log(event);
+        
         this.props.dispatch({type: 'UPDATE_ITEM', payload: event
         });
        }
@@ -48,27 +52,26 @@ class UpdateEvent extends Component {
   render() {
     return (
       <div>
-          <form onSubmit={this.updateEvent}>
-              <h1> this is where we'll add the display events form </h1>
+          <form onSubmit={() => {this.updateEvent(this.props.funEvent.event_id)}}>
 
-              <input  onChange={(event) => this.handleChange( 'title' , event)} 
+              <TextField  onChange={(event) => this.handleChange( 'title' , event)} 
                     type="text" id="" placeholder='title'/>
 
-                <input  onChange={(event) => this.handleChange( 'address' , event)} 
+                <TextField onChange={(event) => this.handleChange( 'address' , event)} 
                     type="text" id="" placeholder='address'/>
 
-                <input  onChange={(event) => this.handleChange( 'description' , event)} 
+                <TextField   onChange={(event) => this.handleChange( 'description' , event)} 
                                     type="text" id="" placeholder='description'/>
 
-                <input  onChange={(event) => this.handleChange( 'date' , event)} 
+                <TextField   onChange={(event) => this.handleChange( 'date' , event)} 
                                     type="text" id="" placeholder='date'/>
 
-                <input  onChange={(event) => this.handleChange( 'image_url' , event)} 
-                                    type="text" id="" placeholder='image link'/>
+                <TextField  onChange={(event) => this.handleChange( 'image_url' , event)} 
+                                                    type="text" id="" placeholder='image link'/>
 
-                <input  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
-                                    type="text" id="" placeholder='bandcamp link'/>
-                <button> submit</button>
+                <TextField  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
+                                                    type="text" id="" placeholder='bandcamp link'/>
+                <button> submit </button>
           </form>
          
       </div>
