@@ -15,9 +15,9 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 
 class LandingPage extends Component {
-  // state = {
-  //   heading: 'Class Component',
-  // };
+  state = {
+    heading: 'Class Component',
+  };
   
 
 componentDidMount = () => {
