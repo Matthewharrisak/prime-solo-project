@@ -14,31 +14,21 @@ import Button from '@material-ui/core/Button';
 class UserPage extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
-  state={
-    eventToUpdate: []
-  }
 
+
+  // Upon Mount, this function will fetch User data depending on the User id
   componentDidMount = () => {
     this.props.dispatch({ type: 'USER_EVENT' , payload: this.props.store.user.id});
   }
 
+  // This function will delete an event that corresponds to the event_id 
   deleteEvent = (event) => {
     console.log('whats up, were deleting suttf', event.event_id);
     this.props.dispatch({type: 'DELETE_ITEM', payload: event});
     window.location.reload(false);  
    }
 
-  updateEvent = (funEvent) => {
-    console.log('funevent ID?' , funEvent)
-    this.setState({
-    eventToUpdate: [funEvent]
-    });
-  console.log(this.state);
-  
-  };
-
- 
-
+   // onclick , user will be brough to NewEventForm component
    goToEventForm = () => {
      this.props.history.push('/NewEventForm');
    }
@@ -48,8 +38,7 @@ class UserPage extends Component {
     return (
       <div>
         <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
-        {/* <p>Your ID is: {this.props.store.user.id}</p> */}
-        {/* <LogOutButton className="log-in" /> */}
+  
 
 
         <button onClick={this.goToEventForm}> add new event </button>
