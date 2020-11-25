@@ -17,6 +17,13 @@ class EventDetails extends Component {
     
       
     } 
+
+    displayBandcamp = () => {
+      console.log(this.props.store.event.event[0].bandcamp);
+      
+      return {__html: this.props.store.event.event[0].bandcamp}
+    }
+
   render() {
     return (
       <div>
@@ -31,14 +38,16 @@ class EventDetails extends Component {
                  <img src={event.image_url} alt="golf"/> 
                 <ListItemText primary={event.description}/>
                 <ListItemText primary={event.date}/>
-                <iFrame src={event.bandcamp}/>  
+
+                 <div dangerouslySetInnerHTML={this.displayBandcamp()}></div>
 
                 </div>  
     
               })}
               
-            
-             
+{/*             
+              <Iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3651962689/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://terminationdust.bandcamp.com/album/growing-down">Growing Down 
+              by Termination Dust</a></Iframe> */}
 
       </div>
     );

@@ -30,7 +30,7 @@ class LandingPage extends Component {
       <div className="container">
 
   <div>
-     <h1> Welcome To CoolShowsCalender.com</h1>
+     <h1> Heres whats happening!!</h1>
      
      {this.props.store.event.event.map((event) =>{
                 return  <ListItem key={event.event_id} id='landingTable'> 
