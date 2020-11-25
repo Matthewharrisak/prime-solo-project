@@ -47,9 +47,9 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
 
         </DialogContent>
         <DialogActions>
-           <Button onClick={handleClose} color="primary">
+           {/* <Button onClick={handleClose} color="primary">
             Cancel
-          </Button> 
+          </Button>  */}
           {/* <UpdateEvent/> */}
         </DialogActions>
       </Dialog>

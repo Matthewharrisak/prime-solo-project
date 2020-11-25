@@ -56,7 +56,7 @@ class UpdateEvent extends Component {
   render() {
     return (
       <div>
-          <form onSubmit={() => {this.updateEvent(this.props.funEvent.event_id)}}>
+          <form>
 
               <TextField  onChange={(event) => this.handleChange( 'title' , event)} 
                     type="text" id="" placeholder='title'/>
@@ -75,7 +75,9 @@ class UpdateEvent extends Component {
 
                 <TextField  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
                                                     type="text" id="" placeholder='bandcamp link'/>
-                <button className='updateEvent'> submit </button>
+                <button onClick={() => {this.updateEvent(this.props.funEvent.event_id)}} className='updateEvent'> submit </button>
+                <button className='updateEvent'> cancel </button>
+
           </form>
          
       </div>

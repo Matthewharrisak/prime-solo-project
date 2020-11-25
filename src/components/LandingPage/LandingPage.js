@@ -4,7 +4,6 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 
 import './LandingPage.css';
 
-
 // Material UI COMPONETNS
 import Button from '@material-ui/core/Button';
 import ListItem from '@material-ui/core/ListItem';
@@ -14,7 +13,7 @@ class LandingPage extends Component {
  
   
 // On page load - this function will load content from the DB table "events"
-componentDidMount = () => {
+    componentDidMount = () => {
     this.props.dispatch({ type: 'GOT_EVENTS'});
   }
 
@@ -46,14 +45,6 @@ componentDidMount = () => {
        })}
 
       </div> 
-
-        <div className="grid">
-          <div className="grid-col grid-col_8">
-          </div>
-
-          <div className="grid-col grid-col_4">
-          </div>
-        </div>
       </div>
     );
   }

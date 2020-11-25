@@ -118,3 +118,9 @@ input {
 #tableRow {
   border: 1px solid black;
 }
+
+.updateEvent{
+float: right;
+display: inline;
+text-align: right;
+}
