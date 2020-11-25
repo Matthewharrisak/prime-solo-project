@@ -41,14 +41,16 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
           <DialogContentText>
           What do you want to edit?
           </DialogContentText>
-
+            
+            {console.log(funEvent)}
             <UpdateEvent funEvent = { funEvent.funEvent } />
 
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose} color="primary">
+           <Button onClick={handleClose} color="primary">
             Cancel
-          </Button>
+          </Button> 
+          {/* <UpdateEvent/> */}
         </DialogActions>
       </Dialog>
     </div>

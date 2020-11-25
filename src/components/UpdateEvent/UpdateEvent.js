@@ -10,14 +10,17 @@ import Button from '@material-ui/core/Button';
 class UpdateEvent extends Component {
 
   // similar to the NewEventForm, state is equal to an object that will be populated by the form
+  // maybe throw data into the STORE -- to then be manipulated in local state to include changes but main prior data
+  // reference the index of object to manipulate
+  
   state={
     newEvent:{
-        title: '',
-        address: '',
-        description: '',
-        date: '',
-        image_url: '',
-        bandcamp: '',
+        title: this.props.funEvent.title,
+        address: this.props.funEvent.address,
+        description: this.props.funEvent.description,
+        date: this.props.funEvent.date,
+        image_url: this.props.funEvent.image_url,
+        bandcamp: this.props.funEvent.bandcamp,
      }
 }
   
@@ -34,7 +37,7 @@ class UpdateEvent extends Component {
 
    
       // this function passes the new state to our PUT request on the server side
-    updateEvent = (event_id) => {
+         updateEvent = (event_id) => {
         console.log('whats up , were updating stuff!!!'  ,this.state, event_id);
         let event = {  
           title: this.state.newEvent.title,
@@ -72,7 +75,7 @@ class UpdateEvent extends Component {
 
                 <TextField  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
                                                     type="text" id="" placeholder='bandcamp link'/>
-                <button> submit </button>
+                <button className='updateEvent'> submit </button>
           </form>
          
       </div>
@@ -80,5 +83,6 @@ class UpdateEvent extends Component {
   }
 }
 
+// move button next to "cancel" button in the dialog box
 // this allows us to use <App /> in index.js
 export default connect(mapStoreToProps)(UpdateEvent);

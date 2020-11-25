@@ -20,7 +20,7 @@ componentDidMount = () => {
 
   // fires off on click event - routes user to "EventDetails" page where they view details for specific event. 
   // Payload - is tied to the "event_id" which is a property of our event object.
-  moreDetails = (moreInfo) => {
+  moreInfo = (moreInfo) => {
     this.props.history.push('/EventDetails');
     this.props.dispatch({type: 'GET_DETAILS', payload: moreInfo});
     console.log(moreInfo);
@@ -39,7 +39,7 @@ componentDidMount = () => {
                  <ListItemText primary= {event.title} />
                  <ListItemText primary= {event.date} />
                  <Button variant="contained" color="secondary"
-                   onClick={() => this.moreDetails(event)}>
+                   onClick={() => this.moreInfo(event)}>
                    more info!!
                   </Button>
                    </ListItem>       
