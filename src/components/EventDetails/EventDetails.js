@@ -32,17 +32,18 @@ class EventDetails extends Component {
                  <img src={event.image_url} alt="golf"/> 
                 <ListItemText primary={event.description}/>
                 <ListItemText primary={event.date}/>
+                <iFrame src={event.bandcamp}/>  
+
                 </div>  
     
-                
+
 
                 {/* </div> */}
               })}
               
-              {/* <>
-            <iFrame style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3651962689/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=739422312/transparent=true/"
-             seamless><a href="https://terminationdust.bandcamp.com/album/growing-down">Growing Down by Termination Dust</a></iFrame>
-</> */}
+            
+             
+
       </div>
     );
   }

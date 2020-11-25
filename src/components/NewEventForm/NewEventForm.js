@@ -51,7 +51,7 @@ class NewEventForm extends Component {
                                     type="text" id="" placeholder='description'/>
 
                 <input  onChange={(event) => this.handleChange( 'date' , event)} 
-                                    type="text" id="" placeholder='date'/>
+                                    type="text" id="" placeholder='date - 1/15/20'/>
 
                 <input  onChange={(event) => this.handleChange( 'image_url' , event)} 
                                     type="text" id="" placeholder='image link'/>
