@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import Iframe from 'react-iframe';
 //Styling and NPM components
@@ -12,7 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 class EventDetails extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
 
-    // fires off funtions on pageload
+    // fires off funtions on pageload -- gets specific details from DB
     componentDidMount = () => {
      this.props.dispatch({ type: 'GET_DETAILS'});
     
@@ -36,9 +35,6 @@ class EventDetails extends Component {
 
                 </div>  
     
-
-
-                {/* </div> */}
               })}
               
             
