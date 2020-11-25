@@ -2,12 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import EventDetails from '../EventDetails/EventDetails';
-import UserPage from '../UserPage/UserPage';
+
 
 class NewEventForm extends Component {
-  // this component doesn't do much to start, just renders some user info to the DOM
 
+  // state is creating our event object - the values will be populated on the form in the Render() section of this component
     state={
         newEvent:{
             title: '',
@@ -19,9 +18,9 @@ class NewEventForm extends Component {
          }
     }
 
+      // this function will handle the values from the event form and use those values to setState
     handleChange= (keyname, event) => {
         event.preventDefault();
-        // console.log('this is our new state' , this.state);
         
         this.setState({
           newEvent:{
@@ -30,6 +29,7 @@ class NewEventForm extends Component {
         }});
      }
 
+      // onClick this function will fire off our new state object
      addEvent = () => {
          console.log('this is our state' , this.state);
          this.props.dispatch({ type: 'NEW_EVENT' , payload: this.state});

@@ -11,6 +11,7 @@ import mapStoreToProps from '../../redux/mapStoreToProps';
 import UpdateEvent from '../UpdateEvent/UpdateEvent';
 
 
+// this is a Material-UI component, it handles the UpdateEvent component and displays the edit form
 
  function  DialogBox(funEvent) {
 

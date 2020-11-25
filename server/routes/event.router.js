@@ -4,9 +4,8 @@ const router = express.Router();
 const {
   rejectUnauthenticated,
 } = require('../modules/authentication-middleware');
-/**
- * GET route template
- */
+
+// this router will select all data from the events table and display it on the landing page
 router.get('/', (req, res) => {
   // GET route code here
   const queryText = `SELECT * FROM events;`;
@@ -19,6 +18,8 @@ router.get('/', (req, res) => {
   });
 });
 
+
+// this get request will display data based on the event_id number 
 router.get('/:id', (req, res) => {
   // GET route code here
   let id = req.params.id;
@@ -32,12 +33,11 @@ router.get('/:id', (req, res) => {
   });
 });
 
-
+// this get request will display data based on the user id number 
 router.get('/userEvent/:id',  (req, res) => {
   // GET route code here
   let id = (req.user.id);
   console.log(req.user);
-  
   const queryText = `SELECT * FROM events WHERE "events"."user_id" = $1;`;
   pool.query(queryText, [id])
   .then((result) => {
@@ -48,10 +48,8 @@ router.get('/userEvent/:id',  (req, res) => {
   });
 });
 
-//like button 
-/**
- * POST route template
- */
+
+// this POST route will send data to database 
 router.post('/', (req, res) => {
   // POST route code here
   console.log('logging from the POST request' , req.body);
@@ -67,6 +65,7 @@ VALUES ($1 , $2, $3, $4 , $5, $6 , $7);`;
   });
 });
 
+// this function will delete DB data, triggered by a onClick event from our user page 
 router.delete('/:id', (req, res) => {
   // DELETE route code here
   // console.log('req.body params', req.params.id);
@@ -81,6 +80,7 @@ router.delete('/:id', (req, res) => {
 });
 
 
+// this function will update database inforamtion
 router.put('/:id', (req, res) => {
   console.log('whats up form the put request?' , req.params.id , req.body);
   // let queryText = `UPDATE "events" SET "title" = 'not cool' WHERE "event_id" = ${req.params.id};`;

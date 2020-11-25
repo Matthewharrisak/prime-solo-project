@@ -12,7 +12,6 @@ import Button from '@material-ui/core/Button';
 
 
 class UserPage extends Component {
-  // this component doesn't do much to start, just renders some user info to the DOM
 
 
 

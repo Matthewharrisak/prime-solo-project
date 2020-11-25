@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 
 class UpdateEvent extends Component {
 
+  // similar to the NewEventForm, state is equal to an object that will be populated by the form
   state={
     newEvent:{
         title: '',
@@ -20,7 +21,8 @@ class UpdateEvent extends Component {
      }
 }
   
-
+// this function handles the input fields on the form 
+// and uses setState to change the values from empty strings to the data from the form
     handleChange= (keyname, event) => {
         event.preventDefault();
         this.setState({
@@ -31,7 +33,7 @@ class UpdateEvent extends Component {
      }
 
    
-
+      // this function passes the new state to our PUT request on the server side
     updateEvent = (event_id) => {
         console.log('whats up , were updating stuff!!!'  ,this.state, event_id);
         let event = {  
@@ -43,8 +45,7 @@ class UpdateEvent extends Component {
           bandcamp: this.state.newEvent.bandcamp,
           event_id: event_id
         } 
-        console.log(event);
-        
+      
         this.props.dispatch({type: 'UPDATE_ITEM', payload: event
         });
        }
@@ -64,7 +65,7 @@ class UpdateEvent extends Component {
                                     type="text" id="" placeholder='description'/>
 
                 <TextField   onChange={(event) => this.handleChange( 'date' , event)} 
-                                    type="text" id="" placeholder='date'/>
+                                    type="text" id="" placeholder='date - 1/15/20'/>
 
                 <TextField  onChange={(event) => this.handleChange( 'image_url' , event)} 
                                                     type="text" id="" placeholder='image link'/>
