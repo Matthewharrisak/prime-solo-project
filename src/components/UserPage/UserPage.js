@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import NewEventForm from '../NewEventForm/NewEventForm';
-import UpdateEvent from '../UpdateEvent/UpdateEvent';
-import logger from 'redux-logger';
+
 
 // MATERIAL UI COMPONENTS
 import ListItem from '@material-ui/core/ListItem';
@@ -28,6 +25,7 @@ class UserPage extends Component {
   deleteEvent = (event) => {
     console.log('whats up, were deleting suttf', event.event_id);
     this.props.dispatch({type: 'DELETE_ITEM', payload: event});
+    window.location.reload(false);  
    }
 
   updateEvent = (funEvent) => {
