@@ -19,7 +19,7 @@ const Nav = (props) => {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title"> Cool Shows Calender . COM </h2>
+        <h2 className="nav-title"> Cool Shows Calendar DOT COM </h2>
       </Link>
     
       <div className="nav-right">

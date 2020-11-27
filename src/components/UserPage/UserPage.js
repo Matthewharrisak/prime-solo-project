@@ -31,43 +31,51 @@ class UserPage extends Component {
     window.location.reload(false);  
    }
 
-
-
+   displayBandcamp = (funEvent) => {
+    console.log(this.props.store.event.event[0].bandcamp);
+    
+    return {__html: funEvent.bandcamp}
+  }
 
   render() {
     return (
       <div>
-        <h1 id="welcome">Welcome, {this.props.store.user.username}!</h1>
-  
-
-
-        <h1 className='whatsHappening'>Upcoming Events</h1>
-
-       {this.props.store.event.event.map((funEvent) =>{
-                return <Card key={funEvent.event_id} className='userPost'>
+        <h1 className='whatsHappening'>{this.props.store.user.username}'s Upcoming Events:</h1>
+         {this.props.store.event.event.map((funEvent) =>{
+             return <Card key={funEvent.event_id} className='userPost'>
                  
 
                   <CardContent>
                   <Typography gutterBottom variant="h5" component="h2">
                   {funEvent.title}
                   </Typography>
+
                   
                   <ListItemText primary={funEvent.address}/>
-                  <img src={funEvent.image_url} alt="event picture"/> 
+
+                  <ListItemText primary={funEvent.date}/>
+                 
+
+                  <img className='mediaClass' src={funEvent.image_url} alt="event picture"/> 
+
+                 
+                  <div className='mediaClass' dangerouslySetInnerHTML={this.displayBandcamp(funEvent)}></div>
 
 
                   
-                  <Typography variant="body2" color="textSecondary" component="p">
+
+                  <Typography variant="body2"  component="p">
                   {funEvent.description}
                   </Typography>
 
-                  <ListItemText primary={funEvent.date}/>
+
+                
+
 
                   <div className='deleteButton'>
                   <button onClick={() => this.deleteEvent(funEvent.event_id)} 
                   className='buttonDelete'>Delete</button>  
                   </div>
-
                   <div className='updateButton'>
                   <DialogBox funEvent = { funEvent }/> 
                   </div>
