@@ -54,7 +54,7 @@ class UserPage extends Component {
                   <ListItemText primary={funEvent.description}/>
                   <ListItemText primary={funEvent.date}/>
                   <Button onClick={() => this.deleteEvent(funEvent.event_id)}>Delete</Button>  
-                 <DialogBox funEvent = { funEvent }/>                  
+                  <DialogBox funEvent = { funEvent }/>                  
                   </div>
          })} 
             

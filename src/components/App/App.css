@@ -113,7 +113,9 @@ input {
 
 #landingTable {
   border: 1px solid black;
-  display: inline-grid;   /* Allow the centering to work */
+  font: caption;
+  background-color:sandybrown;
+  /* display: inline-grid;    */
 	/* margin: 0 auto; */
 }
 
@@ -126,3 +128,5 @@ float: right;
 display: inline;
 text-align: right;
 }
+
+

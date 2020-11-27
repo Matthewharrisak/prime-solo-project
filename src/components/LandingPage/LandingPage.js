@@ -8,9 +8,13 @@ import './LandingPage.css';
 import Button from '@material-ui/core/Button';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
+import Paper from '../MIPaper/MIPaper';
+import Grid from '@material-ui/core/Grid';
+import SimplePaper from '../MIPaper/MIPaper';
 
 class LandingPage extends Component {
  
+
   
 // On page load - this function will load content from the DB table "events"
     componentDidMount = () => {
@@ -26,28 +30,50 @@ class LandingPage extends Component {
   }
 
   render() {
+    
     return (
+      
       <div className="container">
+         <Grid container spacing={1}></Grid>
 
   <div>
      <h1> Heres whats happening!!</h1>
      
-     {this.props.store.event.event.map((event) =>{
+    {this.props.store.event.event.map((event) =>{
                 return  <ListItem key={event.event_id} id='landingTable'> 
-                
+                 <Grid item lg={6}
+                 spacing={3}
+                   container
+                   direction="row"
+                   justify="center"
+                   alignItems="center">
                  <ListItemText primary= {event.title} />
+                 </Grid>
+                 
+                 <Grid item lg={6}
+                 spacing={3}
+                  //  container
+                  //  direction="row"
+                   justify="right"
+                   alignItems="center">
                  <ListItemText primary= {event.date} />
+                 </Grid>
+                 
+                 {/* <Grid item xs={3}> */}
+                 <ListItem/>
                  <Button variant="contained" color="secondary"
                    onClick={() => this.moreInfo(event)}>
                    more info!!
                   </Button>
+                  {/* </Grid> */}
                    </ListItem>       
        })}
 
       </div> 
       </div>
     );
-  }
+    
+      }
 }
 
 export default connect(mapStoreToProps)(LandingPage);
