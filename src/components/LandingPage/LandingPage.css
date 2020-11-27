@@ -80,7 +80,7 @@ Grid
 }
 
 body {
-  background-color: aquamarine;
+  background-color: #A9E5BB;
   
 }
 
@@ -95,7 +95,7 @@ body {
     border-color: #014041;
     border-width: 1px 1px 3px;
     border-radius: 4px;
-    background-color: #00acb0;
+    background-color: #F7B32B;
     color: #f8f8f8;
     font-size: 1.1rem;
     outline: 0;
@@ -103,13 +103,13 @@ body {
   }
 
   .whatsHappening {
-    border-color: grey;
+    border-color: #FCF6B1;
     border-radius: solid black;
     border-radius: 4px;
     font-size: 3.7rem;
     font-style: italic;
     text-shadow: 1px 5px #000000;
-    color: coral;
+    color: #F72C25;
     letter-spacing: 3px;
   
   }

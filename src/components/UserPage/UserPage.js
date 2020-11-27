@@ -14,6 +14,7 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+
 class UserPage extends Component {
 
 
@@ -30,10 +31,7 @@ class UserPage extends Component {
     window.location.reload(false);  
    }
 
-   // onclick , user will be brough to NewEventForm component
-   goToEventForm = () => {
-     this.props.history.push('/NewEventForm');
-   }
+
 
 
   render() {
@@ -43,8 +41,7 @@ class UserPage extends Component {
   
 
 
-        <button onClick={this.goToEventForm}> add new event </button>
-        <h1> Your Events! </h1>
+        <h1 className='whatsHappening'>Upcoming Events</h1>
 
        {this.props.store.event.event.map((funEvent) =>{
                 return <Card key={funEvent.event_id} className='userPost'>
@@ -70,7 +67,7 @@ class UserPage extends Component {
                   <button onClick={() => this.deleteEvent(funEvent.event_id)} 
                   className='buttonDelete'>Delete</button>  
                   </div>
-                  
+
                   <div className='updateButton'>
                   <DialogBox funEvent = { funEvent }/> 
                   </div>
