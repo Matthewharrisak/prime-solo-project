@@ -87,3 +87,29 @@ body {
 .landingDiv {
   font-style: bold;
 }
+
+.landingButton {
+  
+    display: inline-block;
+    padding: 10px 20px;
+    border-color: #014041;
+    border-width: 1px 1px 3px;
+    border-radius: 4px;
+    background-color: #00acb0;
+    color: #f8f8f8;
+    font-size: 1.1rem;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  .whatsHappening {
+    border-color: grey;
+    border-radius: solid black;
+    border-radius: 4px;
+    font-size: 3.7rem;
+    font-style: italic;
+    text-shadow: 1px 5px #000000;
+    color: coral;
+    letter-spacing: 3px;
+  
+  }

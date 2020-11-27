@@ -34,46 +34,39 @@ class LandingPage extends Component {
     return (
       
       <div className="container">
-         <Grid container spacing={1}></Grid>
-
-  <div>
-     <h1> Heres whats happening!!</h1>
+      <Grid>
+ 
+      <h1 className='whatsHappening'> Heres whats happening!!</h1>
      
-    {this.props.store.event.event.map((event) =>{
-                return  <ListItem key={event.event_id} id='landingTable'> 
-                 <Grid item lg={6}
-                 spacing={3}
-                   container
-                   direction="row"
-                   justify="center"
-                   alignItems="center">
-                 <ListItemText primary= {event.title} />
-                 </Grid>
-                 
-                 <Grid item lg={6}
-                 spacing={3}
-                  //  container
-                  //  direction="row"
-                   justify="right"
-                   alignItems="center">
-                 <ListItemText primary= {event.date} />
-                 </Grid>
-                 
-                 {/* <Grid item xs={3}> */}
-                 <ListItem/>
-                 <Button variant="contained" color="secondary"
-                   onClick={() => this.moreInfo(event)}>
-                   more info!!
-                  </Button>
-                  {/* </Grid> */}
-                   </ListItem>       
-       })}
+              {this.props.store.event.event.map((event) =>{
+                          return  <ListItem key={event.event_id} id='landingTable'> 
+                          
+                          <Grid item 
+                          spacing={3}
+                            container
+                            direction="row">
+                          <ListItemText primary= {event.title} />
+                          </Grid>
+                          
+                          <Grid>
+                          <ListItemText 
+                            primary= {event.date} />
+                          </Grid>
+                          
+                          <ListItem/>
+                          <button  className='landingButton'
+                            onClick={() => this.moreInfo(event)}>
+                            more info!!
+                            </button>
+                            </ListItem>       
+                })}
 
-      </div> 
+      
+      </Grid>
       </div>
+
     );
-    
-      }
+  }
 }
 
 export default connect(mapStoreToProps)(LandingPage);

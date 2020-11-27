@@ -19,7 +19,9 @@ Container
 -------------------------------------------------------------------------------- */
 
 .container {
-  padding: 20px;
+  padding: 45px;
+  text-align: center;
+  border-radius: 4px;
 }
 
 /* --------------------------------------------------------------------------------
@@ -113,20 +115,21 @@ input {
 
 #landingTable {
   border: 1px solid black;
-  font: caption;
-  background-color:sandybrown;
-  /* display: inline-grid;    */
-	/* margin: 0 auto; */
+  padding-top: 15px;
+  font: italic;
+  background-color: coral;
+  box-shadow: 10px 10px grey;
+  text-align: left;
+	margin: 15px;
 }
 
-#tableRow {
-  border: 1px solid black;
-}
+
 
 .updateEvent{
 float: right;
 display: inline;
 text-align: right;
 }
+
 
 
