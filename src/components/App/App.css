@@ -166,3 +166,13 @@ text-align: right;
   outline: 0;
   cursor: pointer;
 }
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 200%;
+  height: 200%;
+  max-height: 300px;
+  display: flex;
+}
