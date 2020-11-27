@@ -43,7 +43,7 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
           </DialogContentText>
             
             {console.log(funEvent)}
-            <UpdateEvent funEvent = { funEvent.funEvent } />
+            <UpdateEvent funEvent = { funEvent.funEvent } handleClose = {handleClose}  handleOpen={handleClickOpen}/>
 
         </DialogContent>
         <DialogActions>

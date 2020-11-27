@@ -52,6 +52,9 @@ class UpdateEvent extends Component {
       
         this.props.dispatch({type: 'UPDATE_ITEM', payload: event
         });
+        this.props.handleClose();
+        // this.props.handleOpen(); 
+
        }
 
   render() {
@@ -76,8 +79,9 @@ class UpdateEvent extends Component {
 
                 <TextField  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
                                                     type="text" id="" placeholder='bandcamp link'/>
+
                 <button onClick={() => {this.updateEvent(this.props.funEvent.event_id)}} className='updateFormBtn'> submit </button>
-                <button className='updateFormBtn'> cancel </button>
+                <button onClick={() => {this.props.handleClose()}} className='updateFormBtn'> cancel </button>
 
           </form>
          
