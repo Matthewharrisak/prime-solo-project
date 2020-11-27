@@ -36,7 +36,7 @@ class LandingPage extends Component {
       <div className="container">
       <Grid>
  
-      <h1 className='whatsHappening'> Heres whats happening!!</h1>
+      <h1 className='whatsHappening'> Upcoming Events</h1>
      
               {this.props.store.event.event.map((event) =>{
                           return  <ListItem key={event.event_id} id='landingTable'> 
