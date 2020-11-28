@@ -6,7 +6,15 @@ import Iframe from 'react-iframe';
 // import Iframe from 'react-iframe'
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-
+import Typography from '@material-ui/core/Typography';
+import DialogBox from '../DialogBox/DialogBox';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import { makeStyles } from '@material-ui/core/styles';
 
 class EventDetails extends Component {
   // this component doesn't do much to start, just renders some user info to the DOM
@@ -28,26 +36,41 @@ class EventDetails extends Component {
     return (
       <div>
           
-              <h1> Full Details!! </h1>
+              <h1 className='whatsHappening'> Full Details! </h1>
              
-              {this.props.store.event.event.map((event) =>{
-                return <div key={event.event_id} id='landingTable'> 
+              {this.props.store.event.event.map((funEvent) =>{
+                return <Card key={funEvent.event_id}  className='userPost'>
+                 
 
-                <ListItemText primary={event.title}/>
-                <ListItemText primary={event.address}/>
-                 <img src={event.image_url} alt="golf"/> 
-                <ListItemText primary={event.description}/>
-                <ListItemText primary={event.date}/>
+                <CardContent>
+                <Typography gutterBottom variant="h4" component="h1">
+                {funEvent.title}
+                </Typography>
 
-                 <div dangerouslySetInnerHTML={this.displayBandcamp()}></div>
+                
+                <ListItemText primary={funEvent.address}/>
 
-                </div>  
-    
-              })}
-              
-{/*             
-              <Iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3651962689/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://terminationdust.bandcamp.com/album/growing-down">Growing Down 
-              by Termination Dust</a></Iframe> */}
+                <ListItemText primary={funEvent.date}/>
+               
+
+                <img className='mediaClass' src={funEvent.image_url} alt="event picture"/> 
+
+               
+                <div className='mediaEmbed' dangerouslySetInnerHTML={this.displayBandcamp(funEvent)}></div>
+
+
+                <Typography variant="body2"  component="p">
+                {funEvent.description}
+                </Typography>
+
+                </CardContent>            
+                </Card>
+                
+       })} 
+       
+
+          
+        
 
       </div>
     );

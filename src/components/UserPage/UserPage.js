@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import ResponsiveForm from '../NewEventForm/ResponsiveForm';
 
 // MATERIAL UI COMPONENTS
 import ListItemText from '@material-ui/core/ListItemText';
@@ -18,7 +18,7 @@ import { makeStyles } from '@material-ui/core/styles';
 class UserPage extends Component {
 
 
-
+  
   // Upon Mount, this function will fetch User data depending on the User id
   componentDidMount = () => {
     this.props.dispatch({ type: 'USER_EVENT' , payload: this.props.store.user.id});
@@ -38,15 +38,15 @@ class UserPage extends Component {
   }
 
   render() {
-    return (
+        return (
       <div>
         <h1 className='whatsHappening'>{this.props.store.user.username}'s Upcoming Events:</h1>
          {this.props.store.event.event.map((funEvent) =>{
-             return <Card key={funEvent.event_id} className='userPost'>
+             return <Card key={funEvent.event_id}  className='userPost'>
                  
 
                   <CardContent>
-                  <Typography gutterBottom variant="h5" component="h2">
+                  <Typography gutterBottom variant="h4" component="h1">
                   {funEvent.title}
                   </Typography>
 
@@ -59,7 +59,7 @@ class UserPage extends Component {
                   <img className='mediaClass' src={funEvent.image_url} alt="event picture"/> 
 
                  
-                  <div className='mediaClass' dangerouslySetInnerHTML={this.displayBandcamp(funEvent)}></div>
+                  <div className='mediaEmbed' dangerouslySetInnerHTML={this.displayBandcamp(funEvent)}></div>
 
 
                   
@@ -84,7 +84,7 @@ class UserPage extends Component {
                   </Card>
                   
          })} 
-         
+         <ResponsiveForm/>
   
       </div>
       
