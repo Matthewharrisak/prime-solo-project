@@ -34,7 +34,7 @@ class EventDetails extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
           
               <h1 className='whatsHappening'> Full Details! </h1>
              

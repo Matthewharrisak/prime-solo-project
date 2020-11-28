@@ -44,10 +44,10 @@ class NewEventForm extends Component {
   render() {
     return (
       <div>
-          <form>
+          <form onSubmit={this.addEvent}>
               <h1> New Event! </h1>
 
-                <TextField  onChange={(event) => this.handleChange( 'title' , event)} 
+                <TextField required onChange={(event) => this.handleChange( 'title' , event)} 
                     type="text" id="" placeholder='title'/>
 
                 <TextField onChange={(event) => this.handleChange( 'address' , event)} 
@@ -64,7 +64,7 @@ class NewEventForm extends Component {
 
                 <TextField onChange={(event) => this.handleChange( 'bandcamp' , event)} 
                                                     type="text" id="" placeholder='bandcamp link'/>
-                  <button className='updateFormBtn' onClick={this.addEvent}> submit</button>
+                  <button className='updateFormBtn'> submit</button>
                   <button onClick={() => {this.props.handleClose()}} className='updateFormBtn'> cancel </button>
           </form>
            </div>
