@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import EventDetails from '../EventDetails/EventDetails';
-import UserPage from '../UserPage/UserPage';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 class UpdateEvent extends Component {
 
@@ -49,13 +44,12 @@ class UpdateEvent extends Component {
           bandcamp: this.state.newEvent.bandcamp,
           event_id: event_id
         } 
-      
         this.props.dispatch({type: 'UPDATE_ITEM', payload: event
         });
-        this.props.handleClose();
-        // this.props.handleOpen(); 
 
-       }
+        this.props.handleClose();
+        this.props.dispatch({ type: 'GOT_EVENTS'});
+      }
 
   render() {
     return (
@@ -63,6 +57,7 @@ class UpdateEvent extends Component {
           <form>
 
               <TextField  onChange={(event) => this.handleChange( 'title' , event)} 
+                id="filled-basic" label="Filled" variant="filled"
                     type="text" id="" placeholder={this.props.funEvent.title}/>
 
                 <TextField onChange={(event) => this.handleChange( 'address' , event)} 

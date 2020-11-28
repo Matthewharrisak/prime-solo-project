@@ -25,6 +25,8 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
 
   const handleClose = () => {
     setOpen(false);
+    window.location.reload(false);  
+
   };
 
 
@@ -42,7 +44,6 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
           What do you want to edit?
           </DialogContentText>
             
-            {console.log(funEvent)}
             <UpdateEvent funEvent = { funEvent.funEvent } handleClose = {handleClose}  handleOpen={handleClickOpen}/>
 
         </DialogContent>
