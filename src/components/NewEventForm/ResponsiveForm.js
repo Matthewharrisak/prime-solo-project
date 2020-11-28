@@ -28,7 +28,7 @@ export default function ResponsiveDialog() {
           Add Event
       </button>
       <Dialog
-        fullScreen={fullScreen}
+        // fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
         aria-labelledby="responsive-dialog-title"

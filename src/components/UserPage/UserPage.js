@@ -39,7 +39,7 @@ class UserPage extends Component {
 
   render() {
         return (
-      <div>
+      <div  className="container">
         <h1 className='whatsHappening'>{this.props.store.user.username}'s Upcoming Events:</h1>
          {this.props.store.event.event.map((funEvent) =>{
              return <Card key={funEvent.event_id}  className='userPost'>
