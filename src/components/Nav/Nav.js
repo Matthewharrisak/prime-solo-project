@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import ResponsiveForm from '../NewEventForm/ResponsiveForm';
 const Nav = (props) => {
   let loginLinkData = {
     path: '/login',
@@ -37,9 +37,11 @@ const Nav = (props) => {
               Info Page
             </Link>
 
-            <Link className="nav-link" to='/NewEventForm'>
+            {/* <Link className="nav-link" to='/ResponsiveForm'>
               Add New Event!
-            </Link>
+            </Link> */}
+
+            <ResponsiveForm className="nav-link" />
             <LogOutButton className="nav-link" />
 
           </>

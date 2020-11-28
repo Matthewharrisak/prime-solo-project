@@ -84,7 +84,6 @@ class UserPage extends Component {
                   </Card>
                   
          })} 
-         <ResponsiveForm/>
   
       </div>
       

@@ -209,3 +209,19 @@ border-radius: 4px;
   float: right;
   margin: 10px;
 }
+
+.newEvent {
+ float: left;
+ color: #f2f2f2;
+ /* text-align: center; */
+ display: inline;
+ padding: -24px -10px;
+ text-decoration: none;
+ font-size: 15px;
+ /* margin: 0 0 30px; */
+ background-color: #F7B32B;
+ overflow: hidden;
+ border:none;
+ cursor: pointer;
+ outline:0;
+}

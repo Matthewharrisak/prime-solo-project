@@ -7,9 +7,10 @@
 }
 
 .nav {
-  margin: 0 0 30px;
+  /* margin: 0 0 30px; */
   background-color: #F7B32B;
   overflow: hidden;
+  /* flex: auto; */
 }
 
 .nav-link {

@@ -20,7 +20,7 @@ import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
 import ViewEvents from '../ViewEvents/ViewEvents'; 
-
+import ResponsiveForm from '../NewEventForm/ResponsiveForm';
 import './App.css';
 import EventDetails from '../EventDetails/EventDetails';
 import NewEventForm from '../NewEventForm/NewEventForm';
@@ -46,7 +46,7 @@ class App extends Component {
               path="/about"
               component={AboutPage}
             />
-            <Route exact path="/NewEventForm" component={NewEventForm}/>
+            <Route exact path="/ResponsiveForm" component={ResponsiveForm}/>
             <Route exact path="/EventDetails" component={EventDetails}/>
             <Route exact path="/Home" component={LandingPage}/>
             {/* For protected routes, the view could show one of several things on the same route.

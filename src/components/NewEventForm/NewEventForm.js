@@ -33,6 +33,7 @@ class NewEventForm extends Component {
      addEvent = () => {
          console.log('this is our state' , this.state);
          this.props.dispatch({ type: 'NEW_EVENT' , payload: this.state});
+         this.props.handleClose();
     }
 
   render() {
@@ -58,7 +59,8 @@ class NewEventForm extends Component {
 
                 <input  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
                                     type="text" id="" placeholder='bandcamp link'/>
-                  <button> submit</button>
+                  <button className='updateFormBtn'> submit</button>
+                  <button onClick={() => {this.props.handleClose()}} className='updateFormBtn'> cancel </button>
           </form>
            </div>
     );
