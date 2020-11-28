@@ -25,6 +25,8 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
 
   const handleClose = () => {
     setOpen(false);
+    window.location.reload(false);  
+
   };
 
 
@@ -32,9 +34,9 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
 
   return (
     <div>
-      <Button variant="outlined" color="primary" onClick={handleClickOpen}>
+      <button className='buttonDelete' onClick={handleClickOpen}>
         Update
-      </Button>
+      </button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
         {/* <DialogTitle id="form-dialog-title">Edit Event</DialogTitle> */}
         <DialogContent>
@@ -42,8 +44,7 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
           What do you want to edit?
           </DialogContentText>
             
-            {console.log(funEvent)}
-            <UpdateEvent funEvent = { funEvent.funEvent } />
+            <UpdateEvent funEvent = { funEvent.funEvent } handleClose = {handleClose}  handleOpen={handleClickOpen}/>
 
         </DialogContent>
         <DialogActions>

@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import EventDetails from '../EventDetails/EventDetails';
-import UserPage from '../UserPage/UserPage';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 
 class UpdateEvent extends Component {
 
@@ -48,10 +44,12 @@ class UpdateEvent extends Component {
           bandcamp: this.state.newEvent.bandcamp,
           event_id: event_id
         } 
-      
         this.props.dispatch({type: 'UPDATE_ITEM', payload: event
         });
-       }
+
+        this.props.handleClose();
+        this.props.dispatch({ type: 'GOT_EVENTS'});
+      }
 
   render() {
     return (
@@ -59,24 +57,26 @@ class UpdateEvent extends Component {
           <form>
 
               <TextField  onChange={(event) => this.handleChange( 'title' , event)} 
-                    type="text" id="" placeholder='title'/>
+                id="filled-basic" label="Filled" variant="filled"
+                    type="text" id="" placeholder={this.props.funEvent.title}/>
 
                 <TextField onChange={(event) => this.handleChange( 'address' , event)} 
-                    type="text" id="" placeholder='address'/>
+                    type="text" id="" placeholder={this.props.funEvent.address}/>
 
                 <TextField   onChange={(event) => this.handleChange( 'description' , event)} 
-                                    type="text" id="" placeholder='description'/>
+                                    type="text" id="" placeholder={this.props.funEvent.description}/>
 
                 <TextField   onChange={(event) => this.handleChange( 'date' , event)} 
-                                    type="text" id="" placeholder='date - 1/15/20'/>
+                                    type="text" id="" placeholder={this.props.funEvent.date}/>
 
                 <TextField  onChange={(event) => this.handleChange( 'image_url' , event)} 
                                                     type="text" id="" placeholder='image link'/>
 
                 <TextField  onChange={(event) => this.handleChange( 'bandcamp' , event)} 
                                                     type="text" id="" placeholder='bandcamp link'/>
-                <button onClick={() => {this.updateEvent(this.props.funEvent.event_id)}} className='updateEvent'> submit </button>
-                <button className='updateEvent'> cancel </button>
+
+                <button onClick={() => {this.updateEvent(this.props.funEvent.event_id)}} className='updateFormBtn'> submit </button>
+                <button onClick={() => {this.props.handleClose()}} className='updateFormBtn'> cancel </button>
 
           </form>
          

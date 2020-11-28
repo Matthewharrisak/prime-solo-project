@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-
+import ResponsiveForm from '../NewEventForm/ResponsiveForm';
 const Nav = (props) => {
   let loginLinkData = {
     path: '/login',
@@ -19,8 +19,9 @@ const Nav = (props) => {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title"> Cool Shows Calender . COM </h2>
+        <h2 className="nav-title"> Cool Shows Calendar DOT COM </h2>
       </Link>
+    
       <div className="nav-right">
         <Link className="nav-link" to={loginLinkData.path}>
           {/* Show this link if they are logged in or not,
@@ -28,15 +29,17 @@ const Nav = (props) => {
           and call this link 'Login / Register' if they are not */}
           {loginLinkData.text}
         </Link>
+        
         {/* Show the link to the info page and the logout button if the user is logged in */}
         {props.store.user.id && (
           <>
-            <Link className="nav-link" to="/info">
-              Info Page
-            </Link>
+          
+            <ResponsiveForm className="nav-link" />
             <LogOutButton className="nav-link" />
+
           </>
         )}
+     
         {/* Always show this link since the about page is not protected */}
         <Link className="nav-link" to="/about">
           About

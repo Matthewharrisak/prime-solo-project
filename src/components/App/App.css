@@ -19,7 +19,9 @@ Container
 -------------------------------------------------------------------------------- */
 
 .container {
-  padding: 20px;
+  padding: 45px;
+  text-align: center;
+  border-radius: 4px;
 }
 
 /* --------------------------------------------------------------------------------
@@ -30,7 +32,7 @@ Button
   display: inline-block;
   padding: 10px 20px;
   border-color: #014041;
-  border-width: 1px 1px 3px;
+  border-width: 1px 1px 1px;
   border-radius: 4px;
   background-color: #00acb0;
   color: #f8f8f8;
@@ -55,7 +57,7 @@ Button
 }
 
 .btn:hover {
-  background-color: #008183;
+  /* background-color: #008183; */
   text-decoration: none;
 }
 
@@ -72,8 +74,8 @@ Button
 
 .btn_asLink:hover {
   background-color: transparent;
-  border-color: #008183;
-  color: #008183;
+  /* border-color: #008183;
+  color: #008183; */
 }
 
 /* --------------------------------------------------------------------------------
@@ -113,15 +115,15 @@ input {
 
 #landingTable {
   border: 1px solid black;
-  font: caption;
-  background-color:sandybrown;
-  /* display: inline-grid;    */
-	/* margin: 0 auto; */
+  padding-top: 15px;
+  font: italic;
+  background-color: #FCF6B1;
+  box-shadow: 10px 10px grey;
+  text-align: left;
+	margin: 15px;
 }
 
-#tableRow {
-  border: 1px solid black;
-}
+
 
 .updateEvent{
 float: right;
@@ -130,3 +132,101 @@ text-align: right;
 }
 
 
+.userPost {
+  border: 1px solid black;
+  padding-top: 15px;
+  font: italic;
+  background-color: coral;
+  box-shadow: 100px 100px grey;
+  text-align: left;
+  margin: 50px;
+  padding-left: 30px;
+  
+}
+
+.deleteButton {
+  display: inline;
+  float: left;
+  margin: 20px;
+}
+
+.updateButton{
+  display: inline;
+  float: left;
+  margin: 18.7px;
+}
+
+.buttonDelete {
+  /* display: left; */
+  /* padding: 6px 20px; */
+  border-color: #014041;
+  /* border-width: 1px 1px 1px; */
+  /* border-radius: 4px; */
+  background-color: #00acb0;
+  color: #f8f8f8;
+  font-size: 1.1rem;
+  outline: 0;
+  cursor: pointer;
+}
+
+.mediaClass {
+  margin-left: auto;
+  margin-right: auto; 
+  width: 100%;
+  height: 50%;
+  /* max-height: 300px; */
+  display: flex;
+  padding-top: 15px;
+  border-color: black;
+  border-width: 1px 1px 1px;
+  border-radius: 4px;
+  max-height: 700px;
+  max-width: 700px;
+
+}
+.mediaEmbed {
+
+  width: 100%;
+  height: 50%;
+max-height: 300px;
+  padding-top: 15px;
+  border-width: 1px 1px 1px;
+border-radius: 4px; 
+  margin: auto;
+  width: 50%;
+  /* display: flex; */
+
+  padding: 10px;
+}
+
+.updateFormBtn{
+  /* display: inline-block; */
+  padding: 6px 20px;
+  border-color: #014041;
+  border-width: 1px 1px 1px;
+  border-radius: 4px;
+  background-color: #00acb0;
+  color: #f8f8f8;
+  font-size: 1.1rem;
+  outline: 0;
+  cursor: pointer;
+  float: right;
+  margin: 10px;
+}
+
+.newEvent {
+ /* float: left; */
+ color: #f2f2f2;
+ /* text-align: center; */
+ /* display: inline; */
+ display: inline-flex;
+ padding: -24px -10px;
+ text-decoration: none;
+ font-size: 15px;
+ /* margin: 0 0 30px; */
+ background-color: #F7B32B;
+ overflow: hidden;
+ border:none;
+ cursor: pointer;
+ outline:0;
+}

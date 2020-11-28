@@ -17,7 +17,7 @@ class ViewEvents extends Component {
   render() {
     return (
       <div>
-     <h1> Welcome To CoolShowsCalender.com</h1>
+     <h1> Welcome To CoolShowsCalendar.com</h1>
      
      {this.props.store.event.event.map((event) =>{
                 return  <table key={event.event_id} id='landingTable'> 
