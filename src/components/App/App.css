@@ -157,11 +157,11 @@ text-align: right;
 }
 
 .buttonDelete {
-  display: inline-block;
-  padding: 6px 20px;
+  /* display: left; */
+  /* padding: 6px 20px; */
   border-color: #014041;
-  border-width: 1px 1px 1px;
-  border-radius: 4px;
+  /* border-width: 1px 1px 1px; */
+  /* border-radius: 4px; */
   background-color: #00acb0;
   color: #f8f8f8;
   font-size: 1.1rem;
@@ -172,8 +172,8 @@ text-align: right;
 .mediaClass {
   margin-left: auto;
   margin-right: auto; 
-  /* width: 100%; */
-  /* height: 50%; */
+  width: 100%;
+  height: 50%;
   /* max-height: 300px; */
   display: flex;
   padding-top: 15px;
@@ -194,7 +194,8 @@ max-height: 300px;
 border-radius: 4px; 
   margin: auto;
   width: 50%;
-  
+  /* display: flex; */
+
   padding: 10px;
 }
 
@@ -214,10 +215,11 @@ border-radius: 4px;
 }
 
 .newEvent {
- float: left;
+ /* float: left; */
  color: #f2f2f2;
  /* text-align: center; */
- display: inline;
+ /* display: inline; */
+ display: inline-flex;
  padding: -24px -10px;
  text-decoration: none;
  font-size: 15px;
