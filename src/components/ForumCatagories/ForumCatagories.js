@@ -3,9 +3,8 @@ import { connect } from 'react-redux';
 
 const ForumCatagories = (props) => (
   <a
-    // This button shows up in multiple locations and is styled differently
-    // because it's styled differently depending on where it is used, the className
-    // is passed to it from it's parents through React props
+    // This button shows up in the Header, it directly routes to the Forum  
+
     className='logoutButton'
     href='http://localhost:4567/'
   >
