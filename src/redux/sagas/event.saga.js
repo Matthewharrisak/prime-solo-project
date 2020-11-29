@@ -12,7 +12,7 @@ function* eventSaga(){
 
 }
 
-
+//  SAGA to get event from Event table. 
 function* fetchEvent() {
     try{
         const eventResponse = yield axios.get('/api/events');
@@ -22,28 +22,27 @@ function* fetchEvent() {
      }
 }
 
+// SAGA to fetch event data dependent on the event_id
 function* getDetails(action) {
   console.log(action);
    try{
       const eventResponse = yield axios.get(`/api/events/${action.payload.event_id}`);
       yield put({type: 'SET_EVENT', payload: eventResponse.data})
   }catch(error) {
-      // console.log('error from fetch event saga' ,error);
    }
 }
 
+// SAGA to get event data depending on user_id
 function* userEvent(action) {
-  console.log('in the SAGA LOL ');
-  
-
+  console.log('in the user SAGA');
    try{
     const eventResponse = yield axios.get(`/api/events/userEvent/${action.payload.user_id}`);
     yield put({type: 'SET_EVENT', payload: eventResponse.data})
   }catch(error) {
-      // console.log('error from fetch event saga' ,error);
    }
 }
 
+// SAGA to send axios post data to our server
 function* setEvent(action) {
     try{
         yield axios.post('/api/events', action.payload)
