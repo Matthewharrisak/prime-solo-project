@@ -7,9 +7,7 @@ import ForumCatagories from '../ForumCatagories/ForumCatagories'
 import Button from '@material-ui/core/Button';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Paper from '../MIPaper/MIPaper';
 import Grid from '@material-ui/core/Grid';
-import SimplePaper from '../MIPaper/MIPaper';
 
 class LandingPage extends Component {
  
