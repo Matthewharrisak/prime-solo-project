@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import './LandingPage.css';
-
+import ForumCatagories from '../ForumCatagories/ForumCatagories'
 // Material UI COMPONETNS
 import Button from '@material-ui/core/Button';
 import ListItem from '@material-ui/core/ListItem';
@@ -63,7 +63,11 @@ class LandingPage extends Component {
       
       </Grid>
       </div>
+      // <div>
+      //   <a href="http://localhost:4567/">Visit W3Schools.com!</a>
+      //   <ForumCatagories/>
 
+      // </div>
     );
   }
 }

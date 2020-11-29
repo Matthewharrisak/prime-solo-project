@@ -5,6 +5,7 @@ import LogOutButton from '../LogOutButton/LogOutButton';
 import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import ResponsiveForm from '../NewEventForm/ResponsiveForm';
+import ForumCatagories from '../ForumCatagories/ForumCatagories';
 const Nav = (props) => {
   let loginLinkData = {
     path: '/login',
@@ -34,6 +35,8 @@ const Nav = (props) => {
         {props.store.user.id && (
           <>
           
+         
+            <ForumCatagories className="nav-link"/>
             <ResponsiveForm className="nav-link" />
             <LogOutButton className="nav-link" />
 
