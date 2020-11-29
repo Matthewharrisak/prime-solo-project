@@ -24,7 +24,7 @@ export default function ResponsiveDialog() {
 
   return (
     <div>
-      <button className='newEvent' onClick={handleClickOpen}>
+      <button className='logoutButton' onClick={handleClickOpen}>
           Add Event
       </button>
       <Dialog

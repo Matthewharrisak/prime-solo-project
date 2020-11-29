@@ -6,6 +6,8 @@ import './Nav.css';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 import ResponsiveForm from '../NewEventForm/ResponsiveForm';
 import ForumCatagories from '../ForumCatagories/ForumCatagories';
+import Grid from '@material-ui/core/Grid';
+
 const Nav = (props) => {
   let loginLinkData = {
     path: '/login',
@@ -19,6 +21,7 @@ const Nav = (props) => {
 
   return (
     <div className="nav">
+      <Grid>
       <Link to="/home">
         <h2 className="nav-title"> Cool Shows Calendar DOT COM </h2>
       </Link>
@@ -48,6 +51,8 @@ const Nav = (props) => {
           About
         </Link>
       </div>
+      </Grid>
+
     </div>
   );
 };
