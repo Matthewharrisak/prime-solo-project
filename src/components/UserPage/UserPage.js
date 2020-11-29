@@ -64,7 +64,7 @@ class UserPage extends Component {
 
                   
 
-                  <Typography variant="body2"  component="p">
+                  <Typography variant="body2" className='postDescription' component="p">
                   {funEvent.description}
                   </Typography>
 
@@ -74,7 +74,7 @@ class UserPage extends Component {
 
                   <div className='deleteButton'>
                   <button onClick={() => this.deleteEvent(funEvent.event_id)} 
-                  className='buttonDelete'>Delete</button>  
+                  className='updateFormBtn'>Delete</button>  
                   </div>
                   <div className='updateButton'>
                   <DialogBox funEvent = { funEvent }/> 

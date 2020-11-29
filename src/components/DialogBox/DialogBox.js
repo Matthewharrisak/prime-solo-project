@@ -34,7 +34,7 @@ import UpdateEvent from '../UpdateEvent/UpdateEvent';
 
   return (
     <div>
-      <button className='buttonDelete' onClick={handleClickOpen}>
+      <button className='updateFormBtn' onClick={handleClickOpen}>
         Update
       </button>
       <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
