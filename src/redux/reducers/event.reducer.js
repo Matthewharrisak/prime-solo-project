@@ -9,16 +9,9 @@ const event =  (state = [], action) => {
     }
 }
 
-// const userEvent =  (state = [], action) => {
-//     switch (action.type) {
-//         case 'USER_EVENT':
-//             return action.payload;
-//         default:
-//             return state;
-//     }
-// }
+
 
 export default combineReducers({
     event,
-    // userEvent
+
   });

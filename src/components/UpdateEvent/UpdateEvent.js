@@ -57,9 +57,9 @@ class UpdateEvent extends Component {
           <form>
 
               <TextField  onChange={(event) => this.handleChange( 'title' , event)} 
-                id="filled-basic" label="Filled" variant="filled"
+                
                     type="text" id="" placeholder={this.props.funEvent.title}/>
-
+                
                 <TextField onChange={(event) => this.handleChange( 'address' , event)} 
                     type="text" id="" placeholder={this.props.funEvent.address}/>
 
@@ -85,6 +85,5 @@ class UpdateEvent extends Component {
   }
 }
 
-// move button next to "cancel" button in the dialog box
 // this allows us to use <App /> in index.js
 export default connect(mapStoreToProps)(UpdateEvent);

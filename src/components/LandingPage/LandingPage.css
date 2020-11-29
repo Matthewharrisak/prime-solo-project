@@ -102,6 +102,7 @@ body {
     cursor: pointer;
   }
 
+  /* handles the stylized RED <h1> throughout the app */
   .whatsHappening {
     border-color: #FCF6B1;
     border-radius: solid black;

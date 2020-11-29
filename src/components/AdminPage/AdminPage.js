@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutButton from '../LogOutButton/LogOutButton';
 import mapStoreToProps from '../../redux/mapStoreToProps';
 
 class AdminPage extends Component {
@@ -9,7 +8,7 @@ class AdminPage extends Component {
     return (
       <div>
           <form>
-              <h1> Admin page!!!! wow </h1>
+              <h1> This component will be populated with a table to display User and Events where they can be moderated and deleted. </h1>
           </form>
       </div>
     );

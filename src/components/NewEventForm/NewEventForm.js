@@ -30,7 +30,22 @@ class NewEventForm extends Component {
         }});
      }
 
-
+     // Sets state with hardcoded data - will be used for demonstration 
+     hiddenState = () => {
+       this.setState({
+       newEvent:{
+        title: 'Granddad and Termination Dust',
+        address: '100 Real Street Minneapolis, MN 55403',
+        description: `This is 100% a real gig that could have happened in the year 2020 
+        but right now its being used to demostrate creating a new event!`,
+        date: '1/11/20',
+        image_url: 'https://iili.io/FjjDI2.jpg',
+        bandcamp: `<iframe style="border: 0; width: 100%; height: 120px;" 
+        src="https://bandcamp.com/EmbeddedPlayer/album=2901691260/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://ggrraavvee.bandcamp.com/album/goodbye-nowhere">Goodbye, 
+        Nowhere! by Double Grave</a></iframe>`,
+       }   
+       })
+     }
 
       // onClick this function will fire off our new state object
      addEvent = () => {
@@ -66,8 +81,10 @@ class NewEventForm extends Component {
                                                     type="text" id="" placeholder='bandcamp link'/>
                   <button className='updateFormBtn'> submit</button>
                   <button onClick={() => {this.props.handleClose()}} className='updateFormBtn'> cancel </button>
+                  <button onClick={() => {this.hiddenState()}} className='hidden'> hide</button>
           </form>
-           </div>
+
+          </div>
     );
   }
 }

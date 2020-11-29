@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import Iframe from 'react-iframe';
+
 //Styling and NPM components
-// import Iframe from 'react-iframe'
-import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Typography from '@material-ui/core/Typography';
-import DialogBox from '../DialogBox/DialogBox';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import { makeStyles } from '@material-ui/core/styles';
+
 
 class EventDetails extends Component {
-  // this component doesn't do much to start, just renders some user info to the DOM
 
     // fires off funtions on pageload -- gets specific details from DB
     componentDidMount = () => {
@@ -26,6 +18,7 @@ class EventDetails extends Component {
       
     } 
 
+    // this function helps the embeded link to display by using Reacts dangerouslySetInnerHTML
     displayBandcamp = () => {
       console.log(this.props.store.event.event[0].bandcamp);
       
