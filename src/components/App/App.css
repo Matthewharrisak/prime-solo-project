@@ -56,10 +56,7 @@ Button
   width: 100%;
 }
 
-.btn:hover {
-  /* background-color: #008183; */
-  text-decoration: none;
-}
+
 
 /* This line makes the "Register" and "Login" buttons look like links */
 .btn_asLink {
@@ -74,8 +71,6 @@ Button
 
 .btn_asLink:hover {
   background-color: transparent;
-  /* border-color: #008183;
-  color: #008183; */
 }
 
 /* --------------------------------------------------------------------------------
@@ -131,7 +126,7 @@ display: inline;
 text-align: right;
 }
 
-
+/* classname for the event posting on the user page */
 .userPost {
   border: 1px solid black;
   padding-top: 30px;
@@ -150,6 +145,7 @@ text-align: right;
   margin: 20px;
 }
 
+
 .updateButton{
   display: inline;
   float: left;
@@ -157,11 +153,7 @@ text-align: right;
 }
 
 .buttonDelete {
-  /* display: left; */
-  /* padding: 6px 20px; */
   border-color: #014041;
-  /* border-width: 1px 1px 1px; */
-  /* border-radius: 4px; */
   background-color: #00acb0;
   color: #f8f8f8;
   font-size: 1.1rem;
@@ -169,12 +161,12 @@ text-align: right;
   cursor: pointer;
 }
 
+/* className for event.image_url */
 .mediaClass {
   margin-left: auto;
   margin-right: auto; 
   width: 100%;
   height: 50%;
-  /* max-height: 300px; */
   display: flex;
   padding-top: 15px;
   border-color: black;
@@ -184,6 +176,8 @@ text-align: right;
   max-width: 700px;
 
 }
+
+/* className for the event.bandcamp  */
 .mediaEmbed {
   margin-left: auto;
   margin-right: auto; 
@@ -196,12 +190,14 @@ text-align: right;
   margin: auto;
   width: 50%;
   display: center;
-margin-bottom: 40px;
+  margin-bottom: 40px;
   padding: 10px;
 }
 
+
+/* className for the update form button -
+ however its reused on other buttons */
 .updateFormBtn{
-  /* display: inline-block; */
   padding: 6px 20px;
   border-color: #014041;
   border-width: 1px 1px 1px;
@@ -215,16 +211,14 @@ margin-bottom: 40px;
   margin: 10px;
 }
 
+/* className for the newEvent
+ button in the header */
 .newEvent {
- /* float: left; */
  color: #f2f2f2;
- /* text-align: center; */
- /* display: inline; */
  display: inline-flex;
  padding: -24px -10px;
  text-decoration: none;
  font-size: 15px;
- /* margin: 0 0 30px; */
  background-color: #F7B32B;
  overflow: hidden;
  border:none;
@@ -232,6 +226,7 @@ margin-bottom: 40px;
  outline:0;
 }
 
+/*  hidden button on the newEvent form -- its for a hidden click */
 .hidden {
   border: none;
   background:none;
