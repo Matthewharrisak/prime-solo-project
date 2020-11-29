@@ -232,3 +232,9 @@ margin-bottom: 40px;
  outline:0;
 }
 
+.hidden {
+  border: none;
+  background:none;
+  color: #f2f2f2;
+}
+
