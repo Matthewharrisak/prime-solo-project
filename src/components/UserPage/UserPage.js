@@ -1,19 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import mapStoreToProps from '../../redux/mapStoreToProps';
-import ResponsiveForm from '../NewEventForm/ResponsiveForm';
 
 // MATERIAL UI COMPONENTS
 import ListItemText from '@material-ui/core/ListItemText';
 import DialogBox from '../DialogBox/DialogBox';
-import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 
 class UserPage extends Component {
 
@@ -31,6 +25,7 @@ class UserPage extends Component {
     window.location.reload(false);  
    }
 
+   //Helps display the embedded material by using Reacts dangerouslySetInnerHTML
    displayBandcamp = (funEvent) => {
     console.log(this.props.store.event.event[0].bandcamp);
     

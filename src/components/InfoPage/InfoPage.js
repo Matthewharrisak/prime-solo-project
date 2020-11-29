@@ -7,23 +7,9 @@ import React from 'react';
 
 const InfoPage = () => (
   <div>
-    <p>Info Page</p>
+    <p>Info Page: could be used for something in the future.</p>
   </div>
 );
 
-// If you needed to add local state or other things,
-// you can make it a class component like:
 
-/*
-class InfoPage extends React.Component {
-
-  render() {
-    return (
-      <div>
-        <p>Info Page</p>
-      </div>
-    )
-  }
-}
-*/
 export default InfoPage;

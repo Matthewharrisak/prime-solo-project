@@ -85,6 +85,5 @@ class UpdateEvent extends Component {
   }
 }
 
-// move button next to "cancel" button in the dialog box
 // this allows us to use <App /> in index.js
 export default connect(mapStoreToProps)(UpdateEvent);

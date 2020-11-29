@@ -30,6 +30,7 @@ class NewEventForm extends Component {
         }});
      }
 
+     // Sets state with hardcoded data - will be used for demonstration 
      hiddenState = () => {
        this.setState({
        newEvent:{
@@ -83,7 +84,7 @@ class NewEventForm extends Component {
                   <button onClick={() => {this.hiddenState()}} className='hidden'> hide</button>
           </form>
 
-           </div>
+          </div>
     );
   }
 }

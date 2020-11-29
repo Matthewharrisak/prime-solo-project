@@ -63,11 +63,6 @@ class LandingPage extends Component {
       
       </Grid>
       </div>
-      // <div>
-      //   <a href="http://localhost:4567/">Visit W3Schools.com!</a>
-      //   <ForumCatagories/>
-
-      // </div>
     );
   }
 }
