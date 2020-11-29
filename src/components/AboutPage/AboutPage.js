@@ -8,7 +8,13 @@ import React from 'react';
 const AboutPage = () => (
   <div className="container">
     <div>
-      <p>This about page is for anyone to read!</p>
+      <h1 className='whatsHappening'> About:</h1>
+      <p>  Cool Calendar Shows DOT COM is a user generated community designed to give artists
+         a place to advertise their events and connect with friends! Upon landing, users are able to see all events being advertised and access specific event details. 
+         While only registered users can make posts and access the Forum, registration is open to everyone! </p>
+         <p> 
+           This app was built using React, Redux, PostgresSQL, Express, Node.JS, and the forum was powered by NodeBB.
+         </p>
     </div>
   </div>
 );

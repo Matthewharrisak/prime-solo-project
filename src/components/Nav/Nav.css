@@ -38,18 +38,11 @@
 }
 
 .logoutButton {
-  display: block;
-  /* float: right; */
-  text-decoration: none;
-  font-size: 15px;
+  /* font-size: 15px; */
   background-color: #F7B32B;
-  /* overflow: hidden; */
-  /* border:none; */
   cursor: pointer;
-  /* outline:0;  */
   padding: 10px;
   color: #f2f2f2;
-  /* text-align: center; */
   text-decoration: none;
   font-size: 15px;
   margin-left: auto;
@@ -64,12 +57,8 @@
 
 .nav-right {
 float: right;
-  overflow: hidden;
+overflow: hidden;
 display: flex;
-list-style: none;
 align-items: center;
-
-white-space: nowrap;
-position: bottom;
 
 }
