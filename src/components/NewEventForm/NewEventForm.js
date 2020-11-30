@@ -41,8 +41,9 @@ class NewEventForm extends Component {
         date: '1/11/20',
         image_url: 'https://iili.io/FjjDI2.jpg',
         bandcamp: `<iframe style="border: 0; width: 100%; height: 120px;" 
-        src="https://bandcamp.com/EmbeddedPlayer/album=2901691260/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://ggrraavvee.bandcamp.com/album/goodbye-nowhere">Goodbye, 
-        Nowhere! by Double Grave</a></iframe>`,
+        src="https://bandcamp.com/EmbeddedPlayer/album=3651962689/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" 
+        seamless><a href="https://terminationdust.bandcamp.com/album/growing-down">Growing Down by 
+        Termination Dust</a></iframe>`,
        }   
        })
      }
