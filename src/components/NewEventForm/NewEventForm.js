@@ -34,10 +34,9 @@ class NewEventForm extends Component {
      hiddenState = () => {
        this.setState({
        newEvent:{
-        title: 'Granddad and Termination Dust',
-        address: '100 Real Street Minneapolis, MN 55403',
-        description: `This is 100% a real gig that could have happened in the year 2020 
-        but right now its being used to demostrate creating a new event!`,
+        title: 'Granddad and Termination Dust @ Firken Tavern',
+        address: '100 Real Street Portland, OR 55403',
+        description: `Happy to be back at the Firken Tavern! There is a great spot for donuts nearby, With Support from Strange Ranger and Blowout`,
         date: '1/11/20',
         image_url: 'https://iili.io/FjjDI2.jpg',
         bandcamp: `<iframe style="border: 0; width: 100%; height: 120px;" 
