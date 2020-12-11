@@ -39,7 +39,7 @@ const Nav = (props) => {
           <>
           
          
-            <ForumCatagories className="nav-link"/>
+            {/* <ForumCatagories className="nav-link"/> */}
             <ResponsiveForm className="nav-link" />
             <LogOutButton className="nav-link" />
 
