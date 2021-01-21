@@ -8,7 +8,7 @@ import { useFormatDate } from '../../helpers/useFormatDate';
 
 export const EventItem = ({ event, dispatch }) => {
   const history = useHistory();
-  const formattedDate = useFormatDate({ date: get(event, 'date') });
+  const formattedDate = useFormatDate({ date: get(event, 'date', '') });
 
   const onClick = useCallback(() => {
     history.push('/EventDetails');
@@ -16,13 +16,13 @@ export const EventItem = ({ event, dispatch }) => {
     dispatch({ type: 'GET_DETAILS', payload: event });
   }, [history, dispatch]);
 
-return (
-  <StyledContainer>
-    <StyledLabel>{event.title}</StyledLabel>
-    <StyledLabel>{formattedDate}</StyledLabel>
-    <StyledButton onClick={onClick}>more info!!</StyledButton>
-  </StyledContainer>
-)
+  return (
+    <StyledContainer>
+      <StyledLabel>{event.title}</StyledLabel>
+      <StyledLabel>{formattedDate}</StyledLabel>
+      <StyledButton onClick={onClick}>more info!!</StyledButton>
+    </StyledContainer>
+  )
 }
 
 const StyledContainer = styled.div`
@@ -37,6 +37,7 @@ const StyledContainer = styled.div`
   padding: 0.5rem;
   margin-bottom: 1rem;
 `
+
 const StyledLabel = styled(ListItemText)`
   width: 33%;
 `
