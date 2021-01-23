@@ -6,15 +6,13 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import { useFormatDate } from '../../helpers/useFormatDate';
 
-export const EventItem = ({ event, dispatch }) => {
+export const EventItem = ({ event }) => {
   const history = useHistory();
   const formattedDate = useFormatDate({ date: get(event, 'date', '') });
 
   const onClick = useCallback(() => {
     history.push('/EventDetails');
-    // ! issue with this request
-    dispatch({ type: 'GET_DETAILS', payload: event });
-  }, [history, dispatch]);
+  }, [history]);
 
   return (
     <StyledContainer>
