@@ -1,30 +1,55 @@
-import React, { useEffect } from 'react';
-import { map, get } from 'lodash'
-import { withEventsContextProvider, useEventsContext } from '../../contextProviders'
-import { EventItem } from '../EventItem';
+import React, { useEffect } from "react";
+import styled from "styled-components";
+import { map, get } from "lodash";
+import {
+  withEventsContextProvider,
+  useEventsContext,
+} from "../../contextProviders";
+import { EventItem } from "../EventItem";
 
-import Grid from '@material-ui/core/Grid';
+import Grid from "@material-ui/core/Grid";
 
 const LandingPageTest = () => {
-    const { events, getEvents } = useEventsContext();
+  const { events, getEvents } = useEventsContext();
 
-    useEffect(() => {
-        getEvents();
-    }, []);
+  useEffect(() => {
+    getEvents();
+  }, []);
 
-    if (!events.length) return null
+  if (!events.length) return null;
 
-    return <Grid>
-
-        <h1 className='whatsHappening'>Upcoming Events</h1>
+  return (
+    <StyledContainer>
+      <Grid>
+        <StyledHeader>Upcoming Events</StyledHeader>
         {map(events, (event) => {
-            return <EventItem
-                key={get(event, 'event_id', get(event, 'title'))}
-                event={event} />
+          return (
+            <EventItem
+              key={get(event, "event_id", get(event, "title"))}
+              event={event}
+            />
+          );
         })}
+      </Grid>
+    </StyledContainer>
+  );
+};
 
-    </Grid>
+const StyledContainer = styled.div`
+  padding: 45px;
+  text-align: center;
+  border-radius: 4px;
+`;
 
-}
+const StyledHeader = styled.h1`
+  border-color: #fcf6b1;
+  border-radius: solid black;
+  border-radius: 4px;
+  font-size: 3.7rem;
+  font-style: italic;
+  text-shadow: 1px 5px #000000;
+  color: #f72c25;
+  letter-spacing: 3px;
+`;
 
-export default withEventsContextProvider(LandingPageTest)
+export default withEventsContextProvider(LandingPageTest);
