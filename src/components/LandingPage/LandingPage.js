@@ -24,9 +24,9 @@ class LandingPage extends Component {
   // fires off on click event - routes user to "EventDetails" page where they view details for specific event. 
   // Payload - is tied to the "event_id" which is a property of our event object.
   moreInfo = (moreInfo) => {
-    // this.props.history.push('/EventDetails');
-    // this.props.dispatch({ type: 'GET_DETAILS', payload: moreInfo });
-    // console.log(moreInfo);
+    this.props.history.push('/EventDetails');
+    this.props.dispatch({ type: 'GET_DETAILS', payload: moreInfo });
+    console.log(moreInfo);
   }
 
   render() {

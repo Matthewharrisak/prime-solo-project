@@ -5,13 +5,16 @@ import styled from 'styled-components';
 import ListItemText from '@material-ui/core/ListItemText';
 
 import { useFormatDate } from '../../helpers/useFormatDate';
+import { useDispatch } from 'react-redux';
 
 export const EventItem = ({ event }) => {
   const history = useHistory();
+  const dispatch = useDispatch();
   const formattedDate = useFormatDate({ date: get(event, 'date', '') });
 
   const onClick = useCallback(() => {
     history.push('/EventDetails');
+    dispatch({ type: 'GET_DETAILS', payload: event });
   }, [history]);
 
   return (

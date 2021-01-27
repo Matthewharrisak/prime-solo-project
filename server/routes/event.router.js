@@ -8,7 +8,8 @@ const {
 // this router will select all data from the events table and display it on the landing page
 router.get('/', (req, res) => {
   // GET route code here
-  const queryText = `SELECT * FROM events;`;
+  const queryText = ` SELECT * FROM events
+  ORDER BY date ASC;`;
   pool.query(queryText)
   .then((result) => {
       res.send(result.rows);
