@@ -6,6 +6,7 @@ import {
   useEventsContext,
 } from "../../contextProviders";
 import { EventItem } from "../EventItem";
+import DisplayState from '../DisplayState/DisplayState';
 
 import Grid from "@material-ui/core/Grid";
 
@@ -22,14 +23,17 @@ const LandingPageTest = () => {
     <StyledContainer>
       <Grid>
         <StyledHeader>Upcoming Events</StyledHeader>
-        {map(events, (event) => {
+        {/* {map(events, (event) => {
           return (
             <EventItem
               key={get(event, "event_id", get(event, "title"))}
               event={event}
             />
           );
-        })}
+        })} */}
+
+    <DisplayState/>
+
       </Grid>
     </StyledContainer>
   );

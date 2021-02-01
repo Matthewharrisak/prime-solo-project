@@ -46,7 +46,7 @@ class UserPage extends Component {
                   </Typography>
 
                   
-                  <ListItemText primary={funEvent.address}/>
+                  <a href={`https://www.google.com/maps/search/?api=1&query=${funEvent.address}`}>{funEvent.address}</a>
 
                   <ListItemText primary={funEvent.date}/>
                  
@@ -55,7 +55,7 @@ class UserPage extends Component {
 
                  
                   <div className='mediaEmbed' dangerouslySetInnerHTML={this.displayBandcamp(funEvent)}></div>
-
+                  
 
                   
 

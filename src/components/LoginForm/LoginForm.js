@@ -39,30 +39,33 @@ class LoginForm extends Component {
             {this.props.store.errors.loginMessage}
           </h3>
         )}
-        <div>
+
+        <div className="loginDiv">
           <label htmlFor="username">
             Username:
-            <input
+          </label>
+          <input
               type="text"
               name="username"
               required
               value={this.state.username}
               onChange={this.handleInputChangeFor('username')}
             />
-          </label>
         </div>
-        <div>
+          
+        <div className="loginDiv">
           <label htmlFor="password">
             Password:
-            <input
+          </label>
+          <input
               type="password"
               name="password"
               required
               value={this.state.password}
               onChange={this.handleInputChangeFor('password')}
             />
-          </label>
         </div>
+
         <div>
           <input className="btn" type="submit" name="submit" value="Log In" />
         </div>

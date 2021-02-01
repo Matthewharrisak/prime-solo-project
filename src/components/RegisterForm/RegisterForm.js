@@ -35,30 +35,36 @@ class RegisterForm extends Component {
             {this.props.store.errors.registrationMessage}
           </h3>
         )}
-        <div>
+        
+        <div className="inputLabelDiv">
+
+        <div className="loginDiv">
           <label htmlFor="username">
             Username:
-            <input
+          </label>
+          <input
               type="text"
               name="username"
               value={this.state.username}
               required
               onChange={this.handleInputChangeFor('username')}
             />
-          </label>
         </div>
-        <div>
-          <label htmlFor="password">
-            Password:
-            <input
+
+        <div className="loginDiv">
+          <label className="loginLabel" htmlFor="password">
+           Password:
+          </label>
+          <input
+              className="passwordInput"
               type="password"
               name="password"
               value={this.state.password}
               required
               onChange={this.handleInputChangeFor('password')}
             />
-          </label>
         </div>
+          </div>
         <div>
           <input className="btn" type="submit" name="submit" value="Register" />
         </div>
