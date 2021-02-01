@@ -15,12 +15,12 @@ function DisplayState() {
         }, []);
 
   const { events, getEvents } = useEventsContext();
-  const [selectedLocation, setselectedLocation] = useState('all');
+  const [selectedLocation, setselectedLocation] = useState('All');
 
 
   return (
     <div>
-       <button onClick={() => setselectedLocation('all')}>All</button>
+       <button onClick={() => setselectedLocation('All')}>All</button>
         <button onClick={() => setselectedLocation('MN')}>MN</button>
         <button onClick={() => setselectedLocation('OR')}>OR</button>
         <button onClick={() => setselectedLocation('AZ')}>AZ</button>
@@ -28,7 +28,7 @@ function DisplayState() {
          
          {map(events, (event) => {
 
-             if (selectedLocation === ('all')) { 
+             if (selectedLocation === ('All')) { 
           return (
             <EventItem
               key={get(event, "event_id", get(event, "title"))}
