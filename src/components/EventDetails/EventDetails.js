@@ -29,7 +29,7 @@ class EventDetails extends Component {
     return (
       <div className='container'>
           
-              <h1 className='whatsHappening'> Full Details! </h1>
+              <h1 className='whatsHappening'>  </h1>
              
               {this.props.store.event.event.map((funEvent) =>{
                 return <Card key={funEvent.event_id}  className='userPost'>
